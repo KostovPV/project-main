@@ -1,0 +1,50 @@
+.authFormCard {
+    width: 75%;
+    margin: 0 auto;
+
+    .card {
+        .card-body {
+            border-radius: 10px;
+            padding: 30px 30px;
+
+            .authTitle {
+                margin-bottom: 30px;
+
+                h4 {
+                    font-weight: 500;
+                    font-size: 34px;
+                    color: #dc3545;
+                }
+            }
+
+            .formBox {
+
+                .form-control {
+                    padding: 8px 20px;
+                    height: 50px;
+
+                    &:focus,
+                    &:hover {
+                        border-color: #dc3545;
+                    }
+                }
+
+                .btn-primary {
+                    width: 100%;
+                    border-radius: 5px;
+                    padding: 13px 20px;
+                    margin-top: 10px;
+                }
+            }
+
+            .error {
+                margin-top: 10px;
+                color: #dc3545;
+                font-size: 14px;
+                text-align: center;
+                font-style: italic;
+                font-weight: 600;
+            }
+        }
+    }
+}

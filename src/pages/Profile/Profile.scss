@@ -1,0 +1,58 @@
+.updateFileImage {
+    .current_image {
+        height: 120px;
+        width: 120px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    .custom-file {
+        display: block;
+
+        .custom-file-input {
+            display: none;
+        }
+
+        label {
+            margin: 0 auto;
+            border: 1px dashed #ddd;
+            width: 300px;
+            text-align: center;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.4s;
+
+            &:hover {
+                border-color: #dc3545;
+                color: #dc3545;
+            }
+        }
+    }
+
+}
+
+.uploadButton {
+    margin: 0 auto;
+    display: table;
+    margin-top: 50px;
+
+    p {
+        color: #dc3545;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .btn {
+        width: 300px;
+    }
+}
