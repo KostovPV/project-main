@@ -26,8 +26,8 @@ function Header() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" className="nav-link">
-                Contact
+              <NavLink to="/findus" className="nav-link">
+                Find us
               </NavLink>
             </li>
             {user && (
