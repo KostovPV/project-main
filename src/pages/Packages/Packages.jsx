@@ -49,8 +49,7 @@ function Packages() {
                 </span>
                 <h3 className="text-teal">Indoor Games</h3>
                 <p>
-                  Lorem ipsum dolor sit amet. Consequatur aliquam, fuga maiores
-                  amet quo corporis distinctio soluta recusandae?
+                  The funnies indoor time of your kids
                 </p>
                 <p>
                   <a href="#" className="btn btn-primary btn-custom-1 mt-4">
@@ -70,8 +69,7 @@ function Packages() {
                 </span>
                 <h3 className="text-success">Outdoor Game and Event</h3>
                 <p>
-                  Lorem ipsum dolor sit amet. Consequatur aliquam, fuga maiores
-                  amet quo corporis distinctio soluta recusandae?
+                  Fun games and activities in the open nature
                 </p>
                 <p>
                   <a href="#" className="btn btn-warning btn-custom-1 mt-4">
@@ -89,10 +87,9 @@ function Packages() {
                     className="img-fluid"
                   />
                 </span>
-                <h3 className="text-danger">Camping for Kids</h3>
+                <h3 className="text-danger">Parties for Kids</h3>
                 <p>
-                  Lorem ipsum dolor sit amet. Consequatur aliquam, fuga maiores
-                  amet quo corporis distinctio soluta recusandae?
+                 Celebration parties
                 </p>
                 <p>
                   <a href="#" className="btn btn-success btn-custom-1 mt-4">

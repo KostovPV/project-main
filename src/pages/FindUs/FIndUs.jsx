@@ -4,7 +4,7 @@
 import React, { useEffect } from 'react';
 
 const FindUs = () => {
-  const centerLocation = { lat: 42.525899, lon: 27.454538 };
+  const centerLocation = { lat: 42.525899, lng: 27.454538 };
   let map;
   let directionsService;
   let directionsRenderer;
@@ -44,7 +44,7 @@ const FindUs = () => {
 
   const initializeMap = () => {
     map = new window.google.maps.Map(document.getElementById('map'), {
-      center: { lat: centerLocation.lat, lng: centerLocation.lon },
+      center: { lat: centerLocation.lat, lng: centerLocation.lng },
       zoom: 15,
     });
 
@@ -58,32 +58,36 @@ const FindUs = () => {
       (position) => {
         const userLocation = {
           lat: position.coords.latitude,
-          lon: position.coords.longitude,
+          lng: position.coords.longitude,
         };
-
+    
         // Display user marker on the map
         new window.google.maps.Marker({
           position: userLocation,
           map: map,
           title: 'Your Location',
         });
-
+    
         // Calculate and display directions
         calculateAndDisplayRoute(userLocation);
       },
       (error) => {
         console.error('Error getting user location:', error);
+    
+        // Default to a fallback location if user's location cannot be obtained
+        const fallbackLocation = { lat: 42.525899, lng: 27.454538 };
+        calculateAndDisplayRoute(fallbackLocation);
       }
     );
   };
 
   const calculateAndDisplayRoute = (userLocation) => {
     const request = {
-      origin: new window.google.maps.LatLng(userLocation.lat, userLocation.lon),
-      destination: new window.google.maps.LatLng(centerLocation.lat, centerLocation.lon),
+      origin: new window.google.maps.LatLng(userLocation.lat, userLocation.lng),
+      destination: new window.google.maps.LatLng(centerLocation.lat, centerLocation.lng),
       travelMode: 'DRIVING',
     };
-
+  
     directionsService.route(request, (result, status) => {
       if (status === 'OK') {
         directionsRenderer.setDirections(result);
@@ -95,6 +99,7 @@ const FindUs = () => {
       }
     });
   };
+  
 
   return(
     <div className='findus-container'>
