@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./About.scss";
+import "./About.css";
 function About() {
   return (
     <>
       <div className="ftco-blocks-cover-1">
         <div
           className="site-section-cover overlay subpageBanner"
-          style={{ backgroundImage: "url('/images/hero_1.jpg')" }}
+          style={{ backgroundImage: "url('/images/deca1.jpg')" }}
         >
           <div className="container">
             <div className="row align-items-center">
