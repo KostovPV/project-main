@@ -220,10 +220,10 @@ function Header() {
               
                 <span className="icon-facebook text-teal" />
               </a>
-              <a href="#">
+              <a href="https://twitter.com/Kids_center_">
                 <span className="icon-twitter text-success" />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/plamen-kostov-b8676592/">
                 <span className="icon-linkedin text-yellow" />
               </a>
             </div>
