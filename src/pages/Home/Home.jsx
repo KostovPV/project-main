@@ -24,7 +24,7 @@ function Home() {
               </div>
               <div className="col-md-6 ml-auto align-self-end">
                 <img
-                  src="images/deca3-removebg-preview.png"
+                  src="images/kid_transparent.png"
                   alt="Image"
                   className="img-fluid"
                 />
