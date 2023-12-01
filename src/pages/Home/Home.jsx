@@ -64,7 +64,7 @@ function Home() {
                 <span className="wrap-icon">
                   <span className="icon-cog" />
                 </span>
-                <h2>Birghday parties</h2>
+                <h2>Birthday parties</h2>
                 <p>
                  Celebrate your kid's birthday in a frendly atmpsphere
                 </p>
