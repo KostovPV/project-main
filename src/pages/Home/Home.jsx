@@ -66,7 +66,7 @@ function Home() {
                 </span>
                 <h2>Birghday parties</h2>
                 <p>
-                 Celebrate your kid's birghday in a frendly atmpsphere
+                 Celebrate your kid's birthday in a frendly atmpsphere
                 </p>
               </div>
             </div>

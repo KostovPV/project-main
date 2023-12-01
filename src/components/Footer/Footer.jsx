@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 import { NavLink } from "react-router-dom";
+import {db} from '../../firebase/config';
+import { collection, addDoc } from "firebase/firestore";
 
 function Footer() {
+
+  const[inputEmail, setInputEmail] = useState('');
+  const emailCollection = collection(db, 'emails')
+  const inputHandler = (e) => {
+    setInputEmail(e.target.value);
+    console.log("Input value:", e.target.value);
+  };
+  
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    console.log("Input before submitting:", inputEmail);
+  
+    // Other async operations (if any) that might affect the state
+    await addDoc(emailCollection, { email: inputEmail });
+  };
+  
+  
   return (
     <>
       <footer className="site-footer">
@@ -18,9 +37,9 @@ function Footer() {
               <div className="row">
                 <div className="col-xl-7 ml-auto">
                   <h2 className="footer-heading mb-4">Newsletter</h2>
-                  <form action="#" className="d-flex">
+                  <form  className="d-flex"  onSubmit={submitHandler}>
                     <input
-                      type="text"
+                      type="email" onChange={inputHandler}
                       className="form-control mr-3"
                       placeholder="Email"
                     />
