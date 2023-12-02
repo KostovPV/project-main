@@ -161,10 +161,10 @@ function Packages() {
                 </p>
                 <div style={{ display: showMore ? "block" : "none" }}>
                   <p>
-                    Some more text
+                  Games are organized in such a way, so that all children will be equally involved.
                   </p>
                   <p>
-                    Some more text
+                  Spending a fun time is our primary goal. We can facilitate up to 12 kids at the same time.
                   </p>
                   <a onClick={toggleShowMore} className="btn btn-primary btn-custom-1 mt-4">
                     Show less
@@ -192,10 +192,10 @@ function Packages() {
                 </p>
                 <div style={{ display: showMore2 ? "block" : "none" }}>
                   <p>
-                    Some more text
+                    Games are held outside only if the weather permits and there is no health danger for the kids.
                   </p>
                   <p>
-                    Some more text
+                    Supervised by at least two animators. Group can be up to 14 children.
                   </p>
                   <a onClick={toggleShowMore2} className="btn btn-primary btn-custom-1 mt-4">
                     Show less
@@ -223,10 +223,10 @@ function Packages() {
                 </p>
                 <div style={{ display: showMore3 ? "block" : "none" }}>
                   <p>
-                    Some more text
+                  Supervised by at least two animators. Birthday parties are the parties we are the best at. Comfort and wonderful memories are inevitable.
                   </p>
                   <p>
-                    Some more text
+                    Parties are organised for up to 12 children.
                   </p>
                   <a onClick={toggleShowMore3} className="btn btn-primary btn-custom-1 mt-4">
                     Show less

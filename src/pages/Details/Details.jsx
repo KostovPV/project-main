@@ -1,11 +1,12 @@
 import React from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useDocument } from "../../hooks/useDocument";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Details() {
   const { id } = useParams();
   const { user } = useAuthContext();
+  const navigate = useNavigate();
   const userId = user?.uid;
   let formattedDate = null;
   const { document, error } = useDocument("parties", id);
@@ -29,6 +30,12 @@ function Details() {
   }
 
   const canEdit = document?.author === userId;
+
+  const onExit = (e) => {
+    e.preventDefault();
+
+    navigate("/list");
+  };
 
   return (
     <>
@@ -84,6 +91,13 @@ function Details() {
                         <span>{formattedDate}</span>
                       </li>
                     </ul>
+                    <button
+                      type="submit"
+                      className="btn btn-primary text-white py-3 px-5"
+                      onClick={onExit}
+                    >
+                      Return to Party's list
+                    </button>
                     {canEdit && (
                       <NavLink
                         to={`/list/${id}/edit`}

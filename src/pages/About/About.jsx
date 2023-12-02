@@ -38,13 +38,10 @@ function About() {
               <h3 className="text-black">Bring Fun Life To Your Kids</h3>
               <p>
                 <span>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et
-                  harum, magni sequi nostrum maxime enim.
+                  The Kid's center core idea is to create a pleasant atmosphere which will help the children to have a quality time together.  
                 </span>
                 <span>
-                  Magnam id atque dicta deleniti, ipsam ipsum distinctio.
-                  Facilis praesentium voluptatem accusamus, earum veritatis,
-                  laudantium.
+                   We will provede the best serivice for you kid's party.
                 </span>
               </p>
               <p className="mt-5">
