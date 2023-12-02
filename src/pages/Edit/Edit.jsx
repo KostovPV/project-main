@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+
 
 import { db } from "../../firebase/config";
 import {
@@ -110,11 +112,18 @@ function Edit() {
     const ref = doc(db, "parties", id);
     setFormError(null);
     await updateDoc(ref, newparty);
+    
+    toast.success('Successfully updated!', {
+      position: 'top-center',
+    });
     navigate("/list");
   };
 
   const onExit = (e) => {
     e.preventDefault();
+    toast.success('Update was cancelled', {
+      position: 'top-right',
+    });
     navigate("/list");
   };
 
@@ -122,6 +131,9 @@ function Edit() {
     const ref = doc(db, "parties", id);
     e.preventDefault();
     await deleteDoc(ref);
+    toast.success('Successfully deleted!', {
+      position: 'top-center',
+    });
     navigate("/list");
   };
 
