@@ -1,26 +1,49 @@
-import { useState} from "react";
+// import { useState} from "react";
 
+// import { createUserWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "../firebase/config";
+// import { useAuthContext } from "./useAuthContext";
+
+
+// export const useSignup = () =>{
+//     const [error, setError] = useState(null);
+//     const { dispatch} = useAuthContext();
+
+
+//     const signup = (email, password) => {
+//         setError(null);
+
+//         createUserWithEmailAndPassword(auth, email, password)
+//             .then((res)=> {
+//                 dispatch({type: 'LOGIN', payload: res.user})
+//             })
+//             .catch((err)=> {
+//                 setError(err.message)
+//             })
+//     }
+
+//     return { error, signup}
+// }
+
+import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
 
+export const useSignup = () => {
+  const [error, setError] = useState(null);
+  const { dispatch } = useAuthContext();
 
-export const useSignup = () =>{
-    const [error, setError] = useState(null);
-    const { dispatch} = useAuthContext();
+  const signup = async (email, password) => {
+    setError(null);
 
-
-    const signup = (email, password) => {
-        setError(null);
-
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((res)=> {
-                dispatch({type: 'LOGIN', payload: res.user})
-            })
-            .catch((err)=> {
-                setError(err.message)
-            })
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      dispatch({ type: 'LOGIN', payload: res.user });
+    } catch (err) {
+      setError(err.message);
     }
+  };
 
-    return { error, signup}
-}
+  return { error, signup };
+};

@@ -4,10 +4,17 @@ import { useSignup } from "../../hooks/useSignup";
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [repassword, setRepassword] = useState("");
+  const [errors, setErrors] = useState({});
   const { error, signup } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (password !== repassword) {
+      setErrors({ password: "Passwords don't match!" });
+      return;
+    }
+    setErrors({});
     signup(email, password);
   };
 
@@ -49,10 +56,34 @@ function Signup() {
                               value={password}
                             />
                           </div>
+                          <div class="form-group">
+                            <input
+                              type="password"
+                              class="form-control"
+                              placeholder="Repet password"
+                              required
+                              onChange={(e) => setRepassword(e.target.value)}
+                              value={repassword}
+                            />
+                          </div>
                           <button type="submit" className="btn btn-primary">
                             Sign up
                           </button>
                         </form>
+                        {/* Display errors for specific fields */}
+                        {errors.password && <div className="error">{errors.password}</div>}
+
+                        {error && (
+                          <div className="error">
+                            {error.code === "auth/invalid-email"
+                              ? "Invalid email address. Please enter a valid email (e.g., example@example.com)."
+                              : `Error: ${error.message}`}
+                          </div>
+                        )}
+                        {/* Log the error object to the console for debugging */}
+                        {console.log("Error object:", error)}
+
+                        {/* Display generic error */}
                         {error && <div className="error">{error}</div>}
                       </div>
                     </div>
