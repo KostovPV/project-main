@@ -1,7 +1,9 @@
-import React from "react";
+
 import "./Create.scss";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+
 
 import { db } from "../../firebase/config";
 import { collection, addDoc } from "firebase/firestore";
@@ -67,12 +69,29 @@ function Creat() {
     createdBy: user.email,
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const ref = collection(db, "parties");
+  //   setFormError(null);
+  //   await addDoc(ref, newparty);
+  //   setPartyName("");
+  //   setDetails("");
+  //   setDate("");
+  //   setCategory("");
+  //   toast.success('Successfully created!')
+  //   navigate("/list");
+  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const ref = collection(db, "parties");
     setFormError(null);
     await addDoc(ref, newparty);
+
+    toast.success('Successfully created!', {
+      position: 'top-right',
+    });
+
     setPartyName("");
     setDetails("");
     setDate("");
@@ -82,6 +101,11 @@ function Creat() {
 
   const onExit = (e) => {
     e.preventDefault();
+    // Set the default toast options for the current page
+    toast.success('Changes not saved!', {
+      position: 'top-right',
+    });
+    navigate("/list");
     navigate("/list");
   };
 
@@ -121,6 +145,10 @@ function Creat() {
           </div>
           <div className="row">
             <div className="col-lg-8 mx-auto mb-5">
+              <Toaster
+                // position="top-right"
+                reverseOrder={false}
+              />
               {excludedDates && (
                 <>
                   <form onSubmit={handleSubmit}>
