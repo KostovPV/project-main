@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./About.css";
 function About() {
+  const [showMore, setShowMore] = useState(false);
+
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+  };
+
   return (
     <>
       <div className="ftco-blocks-cover-1">
@@ -38,16 +44,34 @@ function About() {
               <h3 className="text-black">Bring Fun Life To Your Kids</h3>
               <p>
                 <span>
-                  The Kid's center core idea is to create a pleasant atmosphere which will help the children to have a quality time together.  
+                  The Kid's center core idea is to create a pleasant atmosphere which will help the children to have a quality time together.
                 </span>
                 <span>
-                   We will provede the best serivice for you kid's party.
+                  We will provide the best serivice for you kid's party.
                 </span>
               </p>
               <p className="mt-5">
-                <a href="#" className="btn btn-warning py-4 btn-custom-1">
+                {/* <a href="#" className="btn btn-warning py-4 btn-custom-1">
                   More About Us
-                </a>
+                </a> */}
+                <div style={{ display: showMore ? "block" : "none" }}>
+                  <p>
+                  Since April 2023 we have been trying to create the best memories for you and your children. The kids smiles and happy look is what we aim at. You can find is at Izgrev bl 4, or simply follow the link:
+                    <span >     <NavLink to="/findus" >
+                      Find us
+                    </NavLink></span>
+
+                  </p>
+
+                  <a onClick={toggleShowMore} className="btn btn-primary btn-custom-1 mt-4">
+                    Show less
+                  </a>
+                </div>
+                {!showMore && (
+                  <a onClick={toggleShowMore} className="btn btn-primary btn-custom-1 mt-4">
+                    More About Us
+                  </a>
+                )}
               </p>
             </div>
           </div>
