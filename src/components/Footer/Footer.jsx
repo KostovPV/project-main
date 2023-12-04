@@ -1,3 +1,5 @@
+
+
 // import React, { useState } from "react";
 // import "./Footer.css";
 // import { NavLink } from "react-router-dom";
@@ -6,9 +8,9 @@
 // import toast, { Toaster } from "react-hot-toast";
 
 // function Footer() {
-
 //   const [inputEmail, setInputEmail] = useState('');
-//   const emailCollection = collection(db, 'emails')
+//   const emailCollection = collection(db, 'emails');
+
 //   const inputHandler = (e) => {
 //     setInputEmail(e.target.value);
 //     console.log("Input value:", e.target.value);
@@ -18,17 +20,16 @@
 //     e.preventDefault();
 //     console.log("Input before submitting:", inputEmail);
 
-
 //     await addDoc(emailCollection, { email: inputEmail });
 
-
 //     document.getElementById('emailInput').value = '';
-
-
 //     setInputEmail('');
-//     toast.success('Successfully subscribed!')
-//   };
 
+   
+//     toast.success('Successfully subscribed!', {
+//       position: 'bottom-right',
+//     });
+//   };
 
 //   return (
 //     <>
@@ -45,12 +46,12 @@
 //               <div className="row">
 //                 <div className="col-xl-7 ml-auto">
 //                   <h2 className="footer-heading mb-4">Newsletter</h2>
-//                   <div><Toaster
-//                     position="bottom-right"
-//                     reverseOrder={false}
-//                   /></div>
+//                   <div>
+//                     <Toaster
+                    
+//                     />
+//                   </div>
 //                   <form className="d-flex" onSubmit={submitHandler}>
-
 //                     <input
 //                       type="email"
 //                       onChange={inputHandler}
@@ -58,8 +59,6 @@
 //                       className="form-control mr-3"
 //                       placeholder="Email"
 //                     />
-
-
 //                     <input
 //                       type="submit"
 //                       defaultValue="Send"
@@ -77,17 +76,26 @@
 // }
 
 // export default Footer;
-
+import { db } from '../../firebase/config';
 import React, { useState } from "react";
 import "./Footer.css";
-import { NavLink } from "react-router-dom";
-import { db } from '../../firebase/config';
 import { collection, addDoc } from "firebase/firestore";
 import toast, { Toaster } from "react-hot-toast";
 
+
+
+
+
+// Google account credentials used to send email
+
+
+const emailCollection = collection(db, 'mail');
+
+// Cloud Function to send email
+
+
 function Footer() {
   const [inputEmail, setInputEmail] = useState('');
-  const emailCollection = collection(db, 'emails');
 
   const inputHandler = (e) => {
     setInputEmail(e.target.value);
@@ -103,14 +111,21 @@ function Footer() {
     document.getElementById('emailInput').value = '';
     setInputEmail('');
 
+    // Note: Do not call Cloud Functions directly here
+    // You should deploy the Cloud Function and let it be triggered by Firestore changes.
+
     // Use createToast function with specific options
     toast.success('Successfully subscribed!', {
       position: 'bottom-right',
     });
   };
 
+
+  
+  
   return (
-    <>
+    
+     <>
       <footer className="site-footer">
         <div className="container">
           <div className="row">
@@ -125,9 +140,7 @@ function Footer() {
                 <div className="col-xl-7 ml-auto">
                   <h2 className="footer-heading mb-4">Newsletter</h2>
                   <div>
-                    <Toaster
-                      // position="bottom-right"
-                      // reverseOrder={false}
+                    <Toaster                 
                     />
                   </div>
                   <form className="d-flex" onSubmit={submitHandler}>
@@ -151,6 +164,7 @@ function Footer() {
         </div>
       </footer>
     </>
+   
   );
 }
 
