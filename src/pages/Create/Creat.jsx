@@ -114,7 +114,7 @@ function Creat() {
       <div className="ftco-blocks-cover-1">
         <div
           className="site-section-cover overlay subpageBanner"
-          style={{ backgroundImage: "url('/images/hero_1.jpg')" }}
+          style={{ backgroundImage: "url('/images/deca3.jpg')" }}
         >
           <div className="container">
             <div className="row align-items-center">
