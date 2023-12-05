@@ -44,7 +44,7 @@ function Home() {
                 </span>
                 <h2>Indoor Games</h2>
                 <p>
-                  Funny and entertaing games for your children in a pleasant atmosphere
+                Funny and entertaining games for your children in a pleasant atmosphere
                 </p>
               </div>
             </div>
@@ -55,7 +55,7 @@ function Home() {
                 </span>
                 <h2>Outdoor Game And Event</h2>
                 <p>
-                  Organize an exited games for your children
+                Organize an exciting game for your children
                 </p>
               </div>
             </div>
@@ -66,7 +66,7 @@ function Home() {
                 </span>
                 <h2>Birthday parties</h2>
                 <p>
-                 Celebrate your kid's birthday in a frendly atmpsphere
+                Celebrate your kid's birthday in a friendly atmosphere
                 </p>
               </div>
             </div>
