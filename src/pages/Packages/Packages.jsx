@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+import './Packages.css'
 function Packages() {
   const [showMore, setShowMore] = useState(false);
   const [showMore2, setShowMore2] = useState(false);
