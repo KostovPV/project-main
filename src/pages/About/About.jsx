@@ -23,10 +23,11 @@ function About() {
                 </span>
                 <h1 className="mb-3 font-weight-bold text-teal">Contact Us</h1>
                 <p>
-                  <NavLink to="/" className="text-white">
+                  {/* <NavLink to="/" className="text-white">
                     Home
-                  </NavLink>
-                  <span className="mx-3">/</span> <strong>Contact us</strong>
+                  </NavLink> */}
+                  <span className="mx-3"><strong>Telephone: 0897011667</strong></span><br/>
+                  <span className="mx-3"><strong>Email: kidscenter.burgas@gmail.com</strong></span>
                 </p>
               </div>
             </div>

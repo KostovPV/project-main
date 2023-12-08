@@ -1,9 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useCollection } from "../../hooks/useCollection";
 
 function List() {
   const { documents: parties } = useCollection("parties");
+  const navigate = useNavigate()
   return (
     <>
       <div className="ftco-blocks-cover-1">
@@ -20,12 +21,12 @@ function List() {
                 <h1 className="mb-3 font-weight-bold text-teal">
                   Party's list
                 </h1>
-                <p>
+                {/* <p>
                   <NavLink to="/" className="text-white">
                     Home
                   </NavLink>
                   <span className="mx-3">/</span> <strong>Party's list</strong>
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -41,6 +42,24 @@ function List() {
               <h2 className="text-black">Party's list</h2>
             </div>
           </div>
+           <p>
+           <p>
+                        <NavLink
+                          to={`/create`}
+                          className="btn btn-primary btn-custom-1 mt-4"
+                        >
+                          Create your oun party
+                        </NavLink>
+                      </p>
+                  {/* <button
+                          type="button"
+                          className="btn btn-primary text-white py-3 px-5"
+                          onClick={()=> navigate('/create')}
+                        >
+                          Create
+                        </button> */}
+                 
+                </p>
           <div className="row">
             {parties != null ? (
               <>

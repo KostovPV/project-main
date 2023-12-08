@@ -1,5 +1,5 @@
 
-import "./Create.scss";
+import "./Create.css";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
@@ -125,12 +125,12 @@ function Creat() {
                 <h1 className="mb-3 font-weight-bold text-teal">
                   Create your party
                 </h1>
-                <p>
+                {/* <p>
                   <NavLink to="/" className="text-white">
                     Home
                   </NavLink>
                   <span className="mx-3">/</span> <strong>Create party</strong>
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -198,6 +198,7 @@ function Creat() {
                         <div className="singleBox">
                           <Select
                             className="form-control"
+                            required
                             onChange={(option) => setCategory(option)}
                             options={categories}
                           />

@@ -35,7 +35,7 @@ console.log(error);
                           <div class="form-group">
                             <input
                               type="email"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Enter email id / username"
                               required
                               onChange={(e) => setEmail(e.target.value)}
@@ -45,7 +45,7 @@ console.log(error);
                           <div class="form-group">
                             <input
                               type="password"
-                              class="form-control"
+                              className="form-control"
                               placeholder="Enter password"
                               required
                               onChange={(e) => setPassword(e.target.value)}

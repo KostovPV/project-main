@@ -16,11 +16,7 @@ function Home() {
                   Bring Fun Life To Your Kids
                 </h1>
                 <p>Amazing Playground for your kids</p>
-                <p className="mt-5">
-                  <a href="#" className="btn btn-primary py-4 btn-custom-1">
-                    Learn More
-                  </a>
-                </p>
+                
               </div>
               <div className="col-md-6 ml-auto align-self-end">
                 <img
