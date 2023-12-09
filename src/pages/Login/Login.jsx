@@ -32,7 +32,7 @@ console.log(error);
                       </div>
                       <div className="formBox">
                         <form onSubmit={handleSubmit}>
-                          <div class="form-group">
+                          <div className="form-group">
                             <input
                               type="email"
                               className="form-control"
@@ -42,7 +42,7 @@ console.log(error);
                               value={email}
                             />
                           </div>
-                          <div class="form-group">
+                          <div className="form-group">
                             <input
                               type="password"
                               className="form-control"
