@@ -12,8 +12,9 @@ const FindUs = () => {
   useEffect(() => {
     const loadScript = () => {
       const script = document.createElement('script');
-  script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAeze8SmEQ1zLTS43pSmM-ZnHViQom20Eg&libraries=places`;
-
+  // script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAeze8SmEQ1zLTS43pSmM-ZnHViQom20Eg&libraries=places`;
+  script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAX6SEchN9tHFooLh3-FH9FP4vOpOGQVHw&libraries=places`;
+// 'AIzaSyAX6SEchN9tHFooLh3-FH9FP4vOpOGQVHw'
       script.async = true;
       document.head.appendChild(script);
 
