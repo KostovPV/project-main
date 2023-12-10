@@ -44,7 +44,7 @@ function Edit() {
 
   const [partyNameError, setPartyNameError] = useState(null);
 
- 
+
   const [detailsError, setDetailsError] = useState(null);
   // const { allDocs } = useCollection('parties')
   const [excludedDates, setExcludedDates] = useState("");
@@ -164,13 +164,18 @@ function Edit() {
   const deleteParty = async (e) => {
     const ref = doc(db, "parties", id);
     e.preventDefault();
-    await deleteDoc(ref);
-    toast.success('Successfully deleted!', {
-      position: 'top-center',
-    });
-    navigate("/list");
-  };
-
+    const hasConfirmed = window.confirm("Are you sure you want to delete this party?");
+    if (hasConfirmed) {
+      await deleteDoc(ref);
+      toast.success('Successfully deleted!', {
+        position: 'top-center',
+      });
+      navigate("/list");
+    }
+    else {
+      return
+    }
+  }
   return (
     <>
       <div className="ftco-blocks-cover-1">
