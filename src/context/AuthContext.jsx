@@ -19,6 +19,27 @@ export const authReducer = (state, action) => {
   }
 };
 
+// export const AuthContextProvider = ({ children }) => {
+//   const [state, dispatch] = useReducer(authReducer, {
+//     user: null,
+//     authIsReady: false,
+//   });
+
+//   useEffect(() => {
+//     const unsub = onAuthStateChanged(auth, (user) => {
+//       dispatch({ type: "AUTH_IS_READY", payload: user });
+//       unsub();
+//     });
+//   }, []);
+
+//   console.log("AuthContext state:", state);
+
+//   return (
+//     <AuthContext.Provider value={{ ...state, dispatch }}>
+//       {children}
+//     </AuthContext.Provider>
+//   );
+// };
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
     user: null,
@@ -28,7 +49,7 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       dispatch({ type: "AUTH_IS_READY", payload: user });
-      unsub();
+      unsub(); // unsubscribe once the initial auth state is received
     });
   }, []);
 
@@ -36,7 +57,7 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{ ...state, dispatch }}>
-      {children}
+      {state.authIsReady ? children : null}
     </AuthContext.Provider>
   );
 };

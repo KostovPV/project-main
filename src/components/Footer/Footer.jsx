@@ -62,7 +62,7 @@ function Footer() {
             <div className="col-lg-8 ml-auto">
               <div className="row">
                 <div className="col-xl-7 ml-auto">
-                  <h2 className="footer-heading mb-4">Newsletter</h2>
+                  <h2 className="footer-heading mb-4">Subscribe for our newsletter</h2>
                   <div>
                     <Toaster                 
                     />
