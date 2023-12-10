@@ -3,6 +3,8 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useDocument } from "../../hooks/useDocument";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
+import "./Details.css";
+
 function Details() {
   const { id } = useParams();
   const { user } = useAuthContext();
@@ -47,22 +49,11 @@ function Details() {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-md-5 mt-5 pt-5">
-                <span className="text-cursive h5 text-red">
-                  Welcome To Our Website
-                </span>
+                <span className="text-cursive h5 text-red">The Kids center </span>
                 <h1 className="mb-3 font-weight-bold text-teal">
-                  {document != null ? document.partyName : "-"}
+                  {document != null ? document.partyName : "-"} details
                 </h1>
-                <p>
-                  <NavLink to="/" className="text-white">
-                    Home
-                  </NavLink>
-                  <span className="mx-3">/</span>
-                  <NavLink to="/list" className="text-white">
-                    Party's list
-                  </NavLink>
-                  <span className="mx-3">/</span> <strong>Details</strong>
-                </p>
+                <p></p>
               </div>
             </div>
           </div>
@@ -72,54 +63,48 @@ function Details() {
         <div className="container">
           <div className="row">
             <div className="col-lg-6 mx-auto">
-              <div className="bg-white p-3 p-md-5">
-                {document != null && formattedDate != null ? (
-                  <>
-                    <h3 className="text-black mb-2">{document.partyName}</h3>
-                    <p>{document.details} to make.</p>
-                    <ul className="list-unstyled footer-link">
-                      <li className="d-block mb-3">
-                        <span className="d-block text-black">Created by</span>
-                        <span>{document.createdBy}</span>
-                      </li>
-                      <li className="d-block mb-3">
-                        <span className="d-block text-black">Category:</span>
-                        <span>{document.category.label}</span>
-                      </li>
-                      <li className="d-block mb-3">
-                        <span className="d-block text-black">Date</span>
-                        <span>{formattedDate}</span>
-                      </li>
-                    </ul>
-                    <button
-                      type="submit"
-                      className="btn btn-primary text-white py-3 px-5"
-                      onClick={onExit}
-                    >
-                      Return to Party's list
-                    </button>
-                    {canEdit && (
-                      <NavLink
-                        to={`/list/${id}/edit`}
-                        party={document}
-                        className="btn btn-primary mt-4"
-                        style={{ display: "block" }}
-                      >
-                        Edit this
-                      </NavLink>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    <div className="text-center">
-                      <div className="spinner-border" role="status">
-                        <span className="sr-only">Loading...</span>
-                      </div>
-                      <p>Loading party details</p>
-                    </div>
-                  </>
-                )}
-              </div>
+            <div className="bg-white p-3 p-md-5 party-cardD-details">
+        {document != null && formattedDate != null ? (
+          <>
+            <h3 className="text-teal mb-2">{document.partyName}</h3>
+            <p className="details">{document.details}</p>
+            <ul className="list-unstyled footer-link">
+              <li className="d-block mb-3 created-by">
+                <span className="d-block text-black">Created by: </span>
+                <span>{document.createdBy}</span>
+              </li>
+              <li className="d-block mb-3 category-label">
+                <span className="d-block text-black">Category:</span>
+                <span>{document.category.label}</span>
+              </li>
+              <li className="d-block mb-3 date">
+                <span className="d-block text-black">Date: </span>
+                <span>{formattedDate}</span>
+              </li>
+            </ul>
+            <div className="button-container">
+              <button
+                type="submit"
+                className="btn btn-primary text-white py-3 px-5"
+                onClick={onExit}
+              >
+                Back to list
+              </button>
+              {canEdit && (
+                <NavLink
+                  to={`/list/${id}/edit`}
+                  party={document}
+                  className="btn btn-primary mt-4 ml-3"
+                  style={{ display: "block" }}
+                >
+                  Edit this
+                </NavLink>
+              )}
+            </div>
+          </>
+        
+        ): null}
+      </div>
             </div>
           </div>
         </div>

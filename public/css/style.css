@@ -546,3 +546,23 @@
   background: #16c3b0;
 }
 
+.form-control {
+  border: 1px solid #e6e6e6;
+}
+
+.form-control:hover,
+.form-control:active,
+.form-control:focus {
+  border: 1px solid #e6e6e6;
+  box-shadow: none;
+}
+
+/* Increase specificity to override existing styles */
+.site-section .form-control:hover,
+.site-section .form-control:active,
+.site-section .form-control:focus {
+  border: 1px solid #e6e6e6;
+  box-shadow: none;
+}
+
+

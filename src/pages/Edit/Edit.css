@@ -1,0 +1,12 @@
+/* Edit.css */
+
+.edit-form .form-control {
+    margin-bottom: 10px;
+  }
+  
+  .partyName-error,
+  .details-error {
+    border: 1px solid red;
+  }
+  
+  

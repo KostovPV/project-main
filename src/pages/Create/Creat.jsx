@@ -1,22 +1,16 @@
-
 import "./Create.css";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-
-
 import { db } from "../../firebase/config";
 import { collection, addDoc } from "firebase/firestore";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import Select from "react-select";
 import { useNavigate } from "react-router";
-
 import { useDocument } from "../../hooks/useDocument";
-
 import DatePicker from "react-datepicker";
 import addDays from "date-fns/addDays";
 import "react-datepicker/dist/react-datepicker.css";
-
 import { useCollection } from "../../hooks/useCollection";
 
 const categories = [
@@ -27,17 +21,30 @@ const categories = [
 ];
 
 function Creat() {
+  const [partyName, setPartyName] = useState("");
+  const [partyNameTouched, setPartyNameTouched] = useState(false);
+  const [partyNameError, setPartyNameError] = useState(null);
+
+  const { user } = useAuthContext();
+  const [details, setDetails] = useState("");
+  const [detailsTouched, setDetailsTouched] = useState(false);
+  const [category, setCategory] = useState("");
+  const navigate = useNavigate();
+  const [formError, setFormError] = useState(null);
+  const [date, setDate] = useState(new Date());
   const { documents: parties } = useCollection("parties");
   const [excludedDates, setExcludedDates] = useState("");
+  const [titleError, setTitleError] = useState(null);
+  const [detailsError, setDetailsError] = useState(null);
 
   useEffect(() => {
     if (parties) {
       console.log("parties", parties);
-      const forbidenDates = parties.map((d) => d.date);
-      console.log(forbidenDates);
+      const forbiddenDates = parties.map((d) => d.date);
+      console.log(forbiddenDates);
 
-      let formattedDates = forbidenDates.map((forbidenDate) => {
-        const milliseconds = forbidenDate.seconds * 1000;
+      let formattedDates = forbiddenDates.map((forbiddenDate) => {
+        const milliseconds = forbiddenDate.seconds * 1000;
         const dateS = new Date(milliseconds);
 
         const day = dateS.getDate();
@@ -51,42 +58,41 @@ function Creat() {
     }
   }, [parties]);
 
-  const [partyName, setPartyName] = useState("");
-  const { user } = useAuthContext();
-  const [details, setDetails] = useState("");
-  // const [dueDate, setDueDate] = useState('')
-  const [category, setCategory] = useState("");
-  const navigate = useNavigate();
-  const [formError, setFormError] = useState(null);
-  const [date, setDate] = useState(new Date());
-  console.log("user", user);
-  const newparty = {
-    partyName,
-    details,
-    date,
-    category,
-    author: user.uid,
-    createdBy: user.email,
+  const validatePartyName = () => {
+    const trimmedPartyName = partyName.trim();
+
+    if (trimmedPartyName.length < 10) {
+      setTitleError("Party title must be at least 10 characters long");
+    } else {
+      setTitleError(null);
+    }
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const validatePartyDetails = () => {
+    if (details.trim().length < 15) {
+      setDetailsError("Party details must be at least 15 characters long");
+    } else {
+      setDetailsError(null);
+    }
+  };
 
-  //   const ref = collection(db, "parties");
-  //   setFormError(null);
-  //   await addDoc(ref, newparty);
-  //   setPartyName("");
-  //   setDetails("");
-  //   setDate("");
-  //   setCategory("");
-  //   toast.success('Successfully created!')
-  //   navigate("/list");
-  // };
+  useEffect(() => {
+    validatePartyName();
+    validatePartyDetails();
+  }, [partyName, details]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const ref = collection(db, "parties");
     setFormError(null);
-    await addDoc(ref, newparty);
+    await addDoc(ref, {
+      partyName,
+      details,
+      date,
+      category,
+      author: user.uid,
+      createdBy: user.email,
+    });
 
     toast.success('Successfully created!', {
       position: 'top-right',
@@ -160,8 +166,15 @@ function Creat() {
                           className="form-control"
                           required
                           onChange={(e) => setPartyName(e.target.value)}
+                          onBlur={() => {
+                            validatePartyName();
+                            setPartyNameTouched(true);
+                          }}
                           value={partyName}
                         />
+                        {titleError && partyNameTouched && (
+                          <span className="text-danger">{titleError}</span>
+                        )}
                       </div>
                     </div>
                     <div className="form-group row">
@@ -173,8 +186,15 @@ function Creat() {
                           cols={30}
                           rows={10}
                           onChange={(e) => setDetails(e.target.value)}
+                          onBlur={() => {
+                            validatePartyDetails();
+                            setDetailsTouched(true);
+                          }}
                           value={details}
                         />
+                        {detailsError && detailsTouched && (
+                          <span className="text-danger">{detailsError}</span>
+                        )}
                       </div>
                     </div>
                     <div className="form-group row">

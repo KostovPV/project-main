@@ -1,0 +1,53 @@
+/* Details.css */
+
+.party-cardD-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #c0bdbb;
+  background-color: #d4cdcd;
+  box-shadow: 0 8px 16px rgba(54, 51, 51, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  height: 520px;
+}
+
+.party-cardD-details h3 {
+  font-size: calc(1.5rem + 4px);
+  margin-bottom: 10px;
+  color: #0066cc;
+  font-family: 'Dancing Script', cursive;
+}
+
+.party-cardD-details p.details {
+  text-align: center;
+  color: #8b4513;
+  font-size: calc(1.3rem + 2px);
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 20px;
+}
+
+/* Apply similar styles for created by, category, and date */
+.party-cardD-details .created-by,
+.party-cardD-details .category-label,
+.party-cardD-details .date {
+  color: #0066cc;
+  font-family: 'Dancing Script', cursive;
+  font-size: calc(1.3rem + 2px);
+  margin-bottom: 10px;
+}
+
+.party-cardD-details .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.party-cardD-details .btn {
+  margin: 0 10px; /* Adjust as needed */
+  width: 240px;
+  height: 45px;
+}

@@ -39,9 +39,17 @@ function Edit() {
   const [canEdit, setCanEdit] = useState();
   const navigate = useNavigate();
   const { document, error } = useDocument("parties", id);
+  const [partyNameTouched, setPartyNameTouched] = useState(false);
+  const [detailsTouched, setDetailsTouched] = useState(false);
 
+  const [partyNameError, setPartyNameError] = useState(null);
+
+ 
+  const [detailsError, setDetailsError] = useState(null);
   // const { allDocs } = useCollection('parties')
   const [excludedDates, setExcludedDates] = useState("");
+  const [formError, setFormError] = useState(null);
+
 
   useEffect(() => {
     if (document) {
@@ -90,7 +98,33 @@ function Edit() {
     }
   }, [document, parties]);
 
-  const [formError, setFormError] = useState(null);
+
+  const validatePartyName = () => {
+    const trimmedPartyName = partyName.trim();
+
+    if (trimmedPartyName.length < 10) {
+      setPartyNameError("Party title must be at least 10 characters long");
+    } else {
+      setPartyNameError(null);
+    }
+  };
+
+  const validatePartyDetails = () => {
+    if (details.trim().length < 15) {
+      setDetailsError("Party details must be at least 15 characters long");
+    } else {
+      setDetailsError(null);
+    }
+  };
+
+  useEffect(() => {
+    validatePartyName();
+    validatePartyDetails();
+  }, [partyName, details]);
+
+
+
+
 
   console.log(document);
 
@@ -112,7 +146,7 @@ function Edit() {
     const ref = doc(db, "parties", id);
     setFormError(null);
     await updateDoc(ref, newparty);
-    
+
     toast.success('Successfully updated!', {
       position: 'top-center',
     });
@@ -181,11 +215,16 @@ function Edit() {
                         <label>Party title</label>
                         <input
                           type="text"
-                          className="form-control"
+                          className={`form-control ${partyNameError ? "partyName-error" : ""
+                            }`}
                           required
                           onChange={(e) => setPartyName(e.target.value)}
+                          onBlur={() => setPartyNameTouched(true)}
                           value={partyName}
                         />
+                        {partyNameError && partyNameTouched && (
+                          <div className="error-message">{partyNameError}</div>
+                        )}
                       </div>
                     </div>
                     <div className="form-group row">
@@ -193,12 +232,17 @@ function Edit() {
                         <label>Party details</label>
                         <textarea
                           required
-                          className="form-control"
+                          className={`form-control ${detailsError ? "details-error" : ""
+                            }`}
                           cols={30}
                           rows={10}
                           onChange={(e) => setDetails(e.target.value)}
+                          onBlur={() => setDetailsTouched(true)}
                           value={details}
                         />
+                        {detailsError && detailsTouched && (
+                          <div className="error-message">{detailsError}</div>
+                        )}
                       </div>
                     </div>
                     <div className="form-group row">
