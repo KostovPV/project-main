@@ -20,6 +20,7 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import AuthGuard from "./components/guards/authGuard";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -34,15 +35,15 @@ function App() {
               <Routes>
                 <>
                   <Route path="/" element={<Home />}></Route>
-                  <Route path="/about" element={<About />}></Route>
-                  <Route path="/packages" element={<Packages />}></Route>
+                  <Route path="/about" element={<AuthGuard><About /></AuthGuard>}></Route>
+                  <Route path="/packages" element={<AuthGuard><Packages /></AuthGuard>}></Route>
                 
                   <Route path="/findus" element={<FindUs />}></Route>
-                  <Route path="/profile" element={<Profile />}></Route>
-                  <Route path="/create" element={<Create />}></Route>
-                  <Route path="/list" element={<List />}></Route>
-                  <Route path="/list/:id" element={<Details />}></Route>
-                  <Route path="/list/:id/edit" element={<Edit />}></Route>
+                  <Route path="/profile" element={<AuthGuard><Profile /></AuthGuard>}></Route>
+                  <Route path="/create" element={<AuthGuard><Create /></AuthGuard>}></Route>
+                  <Route path="/list" element={<AuthGuard><List /></AuthGuard>}></Route>
+                  <Route path="/list/:id" element={<AuthGuard><Details /></AuthGuard>}></Route>
+                  <Route path="/list/:id/edit" element={<AuthGuard><Edit /></AuthGuard>}></Route>
                 </>
                 <Route
                   path="/signup"
@@ -56,7 +57,7 @@ function App() {
             </BrowserRouter>
           )}
         </div>
-        {/* footer content */}
+        
         <Footer />
       </div>
     </>

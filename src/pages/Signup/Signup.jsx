@@ -62,7 +62,7 @@ function Signup() {
                             <input
                               type="password"
                               className="form-control"
-                              placeholder="Repet password"
+                              placeholder="Repeat password"
                               required
                               onChange={(e) => setRepassword(e.target.value)}
                               value={repassword}
