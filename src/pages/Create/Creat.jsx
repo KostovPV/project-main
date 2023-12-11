@@ -36,6 +36,7 @@ function Creat() {
   const [excludedDates, setExcludedDates] = useState("");
   const [titleError, setTitleError] = useState(null);
   const [detailsError, setDetailsError] = useState(null);
+  const [dateError, setDateError] = useState(null);
 
   useEffect(() => {
     if (parties) {
@@ -76,13 +77,31 @@ function Creat() {
     }
   };
 
+  const validateDate = () => {
+    const currentDate = new Date();
+
+    if (date < currentDate) {
+      setDateError("Please select a future date");
+    } else {
+      setDateError(null);
+    }
+  };
+
   useEffect(() => {
     validatePartyName();
     validatePartyDetails();
-  }, [partyName, details]);
+    validateDate();
+  }, [partyName, details, date]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check for any validation errors before proceeding
+    if (titleError || detailsError || dateError) {
+      setFormError("Please fix the validation errors before submitting.");
+      return;
+    }
+
     const ref = collection(db, "parties");
     setFormError(null);
     await addDoc(ref, {
@@ -114,6 +133,7 @@ function Creat() {
     navigate("/list");
     navigate("/list");
   };
+
 
   return (
     <>
@@ -202,13 +222,19 @@ function Creat() {
                         <label>Set due date</label>
                         <div className="singleBox">
                           <DatePicker
-                            className="form-control"
+                            className={`form-control ${dateError ? "date-error" : ""}`}
                             excludeDates={excludedDates.map((d) => new Date(d))}
                             minDate={new Date()}
                             maxDate={addDays(new Date(), 30)}
                             selected={date}
-                            onChange={(date) => setDate(date)}
+                            onChange={(date) => {
+                              setDate(date);
+                              setDateError(null); // Clear the error on change
+                            }}
                           />
+                          {dateError && (
+                            <span className="text-danger">{dateError}</span>
+                          )}
                         </div>
                       </div>
                     </div>
