@@ -86,7 +86,7 @@ function Header() {
                   <span className="icon-map-marker text-yellow" />
                 </span>
                 <span>
-                  Burgas, Izgrev, bl 4, floor <br /> Bulgaria
+                  Burgas, Izgrev, bl 3, floor <br /> Bulgaria
                 </span>
               </div>
               <div className="d-flex site-info align-items-center">

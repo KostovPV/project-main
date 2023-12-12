@@ -26,22 +26,39 @@ function Footer({ visitCount }) {
     console.log("Input value:", e.target.value);
   };
 
+  const isValidEmail = (email) => {
+    // Regular expression for basic email validation
+    const emaliRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emaliRegex.test(String(email).toLowerCase());
+  }; 
+
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log("Input before submitting:", inputEmail);
 
-    await addDoc(emailCollection, { email: inputEmail });
+    if (!isValidEmail(inputEmail)) {
+      // Display a toast message for invalid email
+      toast.error('Invalid email', {
+        position: 'bottom-right',
+      });
+      return; // Exit the function if the email is not valid
+    }
 
-    document.getElementById('emailInput').value = '';
-    setInputEmail('');
+    try {
+      await addDoc(emailCollection, { email: inputEmail });
+      document.getElementById('emailInput').value = '';
+      setInputEmail('');
 
-    // Note: Do not call Cloud Functions directly here
-    // You should deploy the Cloud Function and let it be triggered by Firestore changes.
-
-    // Use createToast function with specific options
-    toast.success('Successfully subscribed!', {
-      position: 'bottom-right',
-    });
+      // Display a success message
+      toast.success('Successfully subscribed!', {
+        position: 'bottom-right',
+      });
+    } catch (error) {
+      console.error('Error adding document:', error);
+      // Optionally, display an error toast message
+      toast.error('Error subscribing. Please try again later.', {
+        position: 'bottom-right',
+      });
+    }
   };
 
 
