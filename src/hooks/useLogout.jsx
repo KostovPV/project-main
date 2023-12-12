@@ -37,6 +37,10 @@ const navigate = useNavigate()
     try {
       await signOut(auth);
       dispatch({ type: 'LOGOUT' });
+
+      // Clear session storage
+      sessionStorage.removeItem("hasVisited");
+      
       navigate('/login'); // Redirect after successful logout
     } catch (error) {
       console.error('Logout error:', error.message);

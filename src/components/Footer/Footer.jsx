@@ -17,7 +17,7 @@ const emailCollection = collection(db, 'mail');
 // Cloud Function to send email
 
 
-function Footer() {
+function Footer({ visitCount }) {
   const [inputEmail, setInputEmail] = useState('');
 
   
@@ -55,6 +55,11 @@ function Footer() {
           <div className="row">
             <div className="col-lg-4">
               <h2 className="footer-heading mb-3">The Kid's center</h2>
+              
+              {visitCount && visitCount !== 0 && (
+                <h2 className="footer-visits">Page was visited {visitCount} times</h2>
+              )}
+              
               <p className="mb-5">
                 Copyright © All rights reserved
               </p>
