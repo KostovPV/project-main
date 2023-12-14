@@ -22,13 +22,13 @@ function About() {
                 <span className="text-cursive h5 text-red">
                   Welcome To Our Website
                 </span>
-                <h1 className="mb-3 font-weight-bold text-teal">Contact Us</h1>
+                <h1 className="mb-3 font-weight-bold text-teal contact-info">Contact Us</h1>
                 <div>
-                  <span className="mx-3">
+                  <span className="mx-3 contact-info">
                     <strong>Telephone: 0897011667</strong>
                   </span>
                   <br />
-                  <span className="mx-3">
+                  <span className="mx-3 contact-info">
                     <strong>Email: kidscenter.burgas@gmail.com</strong>
                   </span>
                 </div>

@@ -6,7 +6,7 @@
   body {
     padding: 0;
     margin: 0;
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
   }
   
   #notfound {
@@ -27,6 +27,7 @@
     max-width: 410px;
     width: 100%;
     text-align: center;
+    background-color: cadetblue;
   }
   
   .notfound .notfound-404 {
