@@ -25,6 +25,7 @@ import Signup from "./pages/Signup/Signup";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import AuthGuard from "./components/guards/authGuard";
+import PageNotFound from "./components/404/404";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -130,6 +131,7 @@ function App() {
                   path="/login"
                   element={!user ? <Login /> : <Navigate to="/" />}
                 ></Route>
+                <Route path='*' element={<PageNotFound/>} />
               </Routes>
             </BrowserRouter>
           )}

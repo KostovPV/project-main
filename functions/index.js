@@ -28,8 +28,8 @@ exports.sendEmail = functions.firestore
             html: `<p>
             Welcome to The Kid's center  ${snap.data().email}<br>
             </p>
-            <h1>You are successfuly subscribed for the nesletter</h1>
-            <p>We hope you'll have wonderfull memories with us </p>
+            <h1>You are successfully subscribed to the newsletter</h1>
+            <p>We hope you'll have wonderful memories with us</p>
                                 `
         };
 
