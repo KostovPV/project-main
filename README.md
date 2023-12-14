@@ -47,5 +47,7 @@ CSS: Crafting a visually appealing and user-centric design.
 #### Screenshots
 
 ## Home Page
+![home page](https://github.com/KostovPV/project-main/assets/106186518/b203f6e1-05d5-4dd8-9e66-3e92385ada11)
+
 
 
