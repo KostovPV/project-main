@@ -5,8 +5,8 @@ import './404.css'
 
 const PageNotFound = () => {
   return (
-    <>
-      
+ 
+     <div className="no-content-container">
 	<div id="notfound">
 		<div className="notfound">
 			<div className="notfound-404">
@@ -18,9 +18,9 @@ const PageNotFound = () => {
             <a> <Link to="/" >Go To Homepage</Link></a>
 		</div>
 	</div>
+    </div> 
 
-
-    </>
+ 
   );
 };
 
