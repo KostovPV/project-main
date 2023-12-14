@@ -49,5 +49,29 @@ CSS: Crafting a visually appealing and user-centric design.
 ## Home Page
 ![home page](https://github.com/KostovPV/project-main/assets/106186518/b203f6e1-05d5-4dd8-9e66-3e92385ada11)
 
+## Findus Page
+![find us](https://github.com/KostovPV/project-main/assets/106186518/efb3e1c2-d095-4c55-af49-35eba5c8e827)
+
+## Login Page
+![login page](https://github.com/KostovPV/project-main/assets/106186518/a3b84810-d670-4007-abfc-c920949f5132)
+
+## Sign up Page
+![sign up page](https://github.com/KostovPV/project-main/assets/106186518/3a58d734-3e42-49b8-a12d-3ed386207f80)
+
+## About Page
+![about us](https://github.com/KostovPV/project-main/assets/106186518/b2dcd5a2-8c6a-4cbc-8079-09c251e765c2)
+
+## Parties Page
+![parties](https://github.com/KostovPV/project-main/assets/106186518/1fcf0620-e580-4e43-845a-493228f2145e)
+
+## Create Page
+![create](https://github.com/KostovPV/project-main/assets/106186518/5ce1d98c-6444-4c52-a744-d73a1f8994f7)
+
+## Details Page
+![details - non author](https://github.com/KostovPV/project-main/assets/106186518/a519108a-e48c-4a4d-ab22-bffd33f29198)
+
+
+
+
 
 
