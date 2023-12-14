@@ -51,7 +51,7 @@ CSS: Crafting a visually appealing and user-centric design.
 
 
 
-## Findus Page
+## Find us Page
 ![find us](https://github.com/KostovPV/project-main/assets/106186518/efb3e1c2-d095-4c55-af49-35eba5c8e827)
 
 
