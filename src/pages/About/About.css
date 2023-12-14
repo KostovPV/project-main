@@ -6,3 +6,13 @@
 .contact-info{
     color: #dee2e6 !important;
 }
+
+.link-style {
+    color: #007bff; /* Example blue color, similar to a traditional hyperlink */
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .link-style:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
