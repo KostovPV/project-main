@@ -104,5 +104,6 @@ CSS: Crafting a visually appealing and user-centric design.
 ![Edit](https://github.com/KostovPV/project-main/assets/106186518/a8adb343-462d-4919-acd5-654bfff25020)
 
 
-
+## 404 Page
+![404](https://github.com/KostovPV/project-main/assets/106186518/bcf985e9-d212-47ac-9342-0b3a7243f5bd)
 
