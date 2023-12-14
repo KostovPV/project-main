@@ -46,13 +46,18 @@ CSS: Crafting a visually appealing and user-centric design.
 
 #### Screenshots
 
-## Home Page
-![home page](https://github.com/KostovPV/project-main/assets/106186518/b203f6e1-05d5-4dd8-9e66-3e92385ada11)
+## Home Page no user
+![home page - no users](https://github.com/KostovPV/project-main/assets/106186518/3ba5d25d-d648-438c-af62-9287df1a2dc3)
+
+
+## Home Page no user
+![Home page logged in](https://github.com/KostovPV/project-main/assets/106186518/42d6e7ba-f38d-4ceb-888e-f406560cabb1)
 
 
 
 ## Find us Page
-![find us](https://github.com/KostovPV/project-main/assets/106186518/efb3e1c2-d095-4c55-af49-35eba5c8e827)
+![find us](https://github.com/KostovPV/project-main/assets/106186518/78e0dcc8-cdca-424b-8ccc-f2cbe49ed479)
+
 
 
 
@@ -67,28 +72,33 @@ CSS: Crafting a visually appealing and user-centric design.
 
 
 ## About Page
-![about us](https://github.com/KostovPV/project-main/assets/106186518/b2dcd5a2-8c6a-4cbc-8079-09c251e765c2)
+![About](https://github.com/KostovPV/project-main/assets/106186518/bb67831b-2478-4338-ac23-630c1c7fe444)
+
 
 
 
 ## Parties Page
-![parties](https://github.com/KostovPV/project-main/assets/106186518/1fcf0620-e580-4e43-845a-493228f2145e)
+![Party's list](https://github.com/KostovPV/project-main/assets/106186518/2696743b-9286-46f5-b6b9-5f8019cdfd4f)
 
 
 
 ## Create Page
-![create](https://github.com/KostovPV/project-main/assets/106186518/5ce1d98c-6444-4c52-a744-d73a1f8994f7)
+![Create](https://github.com/KostovPV/project-main/assets/106186518/f9d953b2-16a8-4a8b-b2e6-e48dfa5d234a)
 
 
 
 ## Details Page - non-author
-![details - non author](https://github.com/KostovPV/project-main/assets/106186518/a519108a-e48c-4a4d-ab22-bffd33f29198)
+![Details - non-author](https://github.com/KostovPV/project-main/assets/106186518/93bcf22a-84aa-40bf-9c6f-b26af6eb6c89)
+
 
 
 
 ## Details Page - author
-![detail - creator](https://github.com/KostovPV/project-main/assets/106186518/daf801e7-5d1d-4253-925a-48474efaf296)
+![Details author](https://github.com/KostovPV/project-main/assets/106186518/fd72082c-e2db-4b43-ae35-45b688eb8b12)
 
+
+## Edit Page
+![Edit](https://github.com/KostovPV/project-main/assets/106186518/a8adb343-462d-4919-acd5-654bfff25020)
 
 
 
