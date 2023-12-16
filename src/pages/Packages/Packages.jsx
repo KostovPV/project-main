@@ -19,11 +19,11 @@ function Packages() {
   const toggleShowMore3 = () => {
     setShowMore3(!showMore3);
   };
- 
+
   return (
     <>
       <div className="ftco-blocks-cover-1">
-       
+
       </div>
       <div className="site-section bg-info">
         <div className="container">
@@ -51,17 +51,17 @@ function Packages() {
                 </p>
                 <div style={{ display: showMore ? "block" : "none" }}>
                   <p>
-                  Games are organized in such a way, so that all children will be equally involved.
+                    Games are organized in such a way, so that all children will be equally involved.
                   </p>
                   <p>
-                  Spending a fun time is our primary goal. We can facilitate up to 12 kids at the same time.
+                    Spending a fun time is our primary goal. We can facilitate up to 12 kids at the same time.
                   </p>
-                  <a onClick={toggleShowMore} className="btn btn-primary btn-custom-1 mt-4">
+                  <a onClick={toggleShowMore} className="btn btn-primary btn-custom-1 mt-4 btn-indicator rotate">
                     Show less
                   </a>
                 </div>
                 {!showMore && (
-                  <a onClick={toggleShowMore} className="btn btn-primary btn-custom-1 mt-4">
+                  <a onClick={toggleShowMore} className="btn btn-primary btn-custom-1 mt-4 btn-indicator">
                     Learn More
                   </a>
                 )}
@@ -87,12 +87,12 @@ function Packages() {
                   <p>
                     Supervised by at least two animators. Group can be up to 14 children.
                   </p>
-                  <a onClick={toggleShowMore2} className="btn btn-primary btn-custom-1 mt-4">
+                  <a onClick={toggleShowMore2} className="btn btn-primary btn-custom-1 mt-4 btn-indicator rotate">
                     Show less
                   </a>
                 </div>
                 {!showMore2 && (
-                  <a onClick={toggleShowMore2} className="btn btn-primary btn-custom-1 mt-4">
+                  <a onClick={toggleShowMore2} className="btn btn-primary btn-custom-1 mt-4 btn-indicator">
                     Learn More
                   </a>
                 )}
@@ -109,21 +109,21 @@ function Packages() {
                 </span>
                 <h3 className="text-danger">Parties for Kids</h3>
                 <p>
-                Celebration parties for different occasions
+                  Celebration parties for different occasions
                 </p>
                 <div style={{ display: showMore3 ? "block" : "none" }}>
                   <p>
-                  Supervised by at least two animators. Birthday parties are the parties we are the best at. Comfort and wonderful memories are inevitable.
+                    Supervised by at least two animators. Birthday parties are the parties we are the best at. Comfort and wonderful memories are inevitable.
                   </p>
                   <p>
                     Parties are organised for up to 12 children.
                   </p>
-                  <a onClick={toggleShowMore3} className="btn btn-primary btn-custom-1 mt-4">
+                  <a onClick={toggleShowMore3} className="btn btn-primary btn-custom-1 mt-4 btn-indicator rotate">
                     Show less
                   </a>
                 </div>
                 {!showMore3 && (
-                  <a onClick={toggleShowMore3} className="btn btn-primary btn-custom-1 mt-4">
+                  <a onClick={toggleShowMore3} className="btn btn-primary btn-custom-1 mt-4 btn-indicator">
                     Learn More
                   </a>
                 )}
@@ -132,7 +132,7 @@ function Packages() {
           </div>
         </div>
       </div>
-   
+
     </>
   );
 

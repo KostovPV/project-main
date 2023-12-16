@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+
 
 import { db } from "../../firebase/config";
 import {
@@ -322,7 +325,8 @@ function Edit() {
                             className="btn btn-primary text-white py-3 px-5"
                             onClick={deleteParty}
                           >
-                            Delete
+                            {`Delete `} 
+                            <FontAwesomeIcon icon={faTrash} />
                           </button>
                         )}
                       </div>

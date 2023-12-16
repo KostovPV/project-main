@@ -9,4 +9,7 @@
     border: 1px solid red;
   }
   
-  
+  .recicle-bin {
+    font-size: 260px !important;
+    color: white !important;
+}
