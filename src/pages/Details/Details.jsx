@@ -85,7 +85,7 @@ function Details() {
             <div className="button-container">
               <button
                 type="submit"
-                className="btn btn-primary text-white py-3 px-5"
+                className="btn btn-primary text-white py-3 px-5 btn-centered-text"
                 onClick={onExit}
               >
                 Back to list
@@ -94,7 +94,7 @@ function Details() {
                 <NavLink
                   to={`/list/${id}/edit`}
                   party={document}
-                  className="btn btn-primary mt-4 ml-3"
+                  className="btn btn-primary text-white py-3 px-5 btn-centered-text"
                   style={{ display: "block" }}
                 >
                   Edit this

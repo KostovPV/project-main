@@ -51,3 +51,13 @@
   width: 240px;
   height: 45px;
 }
+
+ .btn-primary .text-white .py-3 .px-5{
+  text-align: center;
+}
+
+.btn-centered-text {
+  padding-top: 10px; /* Adjust as needed */
+  padding-bottom: 14px; /* Adjust as needed */
+  line-height: normal; /* Resets any inherited line height */
+}
