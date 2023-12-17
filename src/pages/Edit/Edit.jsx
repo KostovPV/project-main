@@ -207,12 +207,7 @@ function Edit() {
                 <h1 className="mb-3 font-weight-bold text-teal">
                   Edit party details
                 </h1>
-                <p>
-                  <NavLink to="/" className="text-white">
-                    Home
-                  </NavLink>
-                  <span className="mx-3">/</span> <strong>Edit details</strong>
-                </p>
+              
               </div>
             </div>
           </div>
