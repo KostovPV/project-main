@@ -193,7 +193,7 @@ const FindUs = () => {
 
   return (
     <div className='findus-container'>
-      {loading && <p>Loading...</p>}
+      {/* {loading && <p>Loading...</p>} */}
       <div id="map" style={{ height: '100vh', width: '100%' }} />
     </div>
   );
