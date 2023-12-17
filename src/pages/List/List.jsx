@@ -35,7 +35,7 @@ function List() {
         <div className="container">
           <div className="row mb-5">
             <div className="col-12 text-center">
-              <span className="text-cursive h5 text-red d-block">
+              <span className="text-cursive h5 text-red d-block welcome-msg">
                 All party list
               </span>
               <h2 className="text-black">Party's list</h2>
@@ -77,7 +77,7 @@ function List() {
             
           </div>
           <p>
-            <NavLink to={`/create`} className="btn btn-primary btn-custom-1 mt-4">
+            <NavLink to={`/create`} className="btn btn-primary btn-custom-1 mt-4 create-btn">
               Create your own party
             </NavLink>
           </p>

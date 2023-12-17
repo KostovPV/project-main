@@ -1,19 +1,24 @@
 /* Edit.css */
 
+.btn {
+  width: 28%;
+  
+}
 .edit-form .form-control {
   margin-bottom: 10px;
   width: 100%; /* Ensure full width */
 }
-  
-  .partyName-error,
-  .details-error {
-    border: 1px solid red;
-  }
-  
-  .recicle-bin {
-    font-size: 260px !important;
-    color: white !important;
+
+.partyName-error,
+.details-error {
+  border: 1px solid red;
 }
+
+.recicle-bin {
+  font-size: 20px; /* Adjusted font size for the recycle bin icon */
+  color: white;
+}
+
 .edit-form .button-container {
   display: flex;
   flex-direction: row; /* Align buttons horizontally */
@@ -30,7 +35,6 @@
   max-width: none; /* Remove max-width restriction */
 }
 
-
 @media (max-width: 770px) {
   .edit-form .button-container {
     flex-direction: column; /* Stack buttons vertically on smaller screens */
@@ -45,27 +49,45 @@
   }
 }
 
-/* Responsive adjustments for smaller screens */
+@media (max-width: 550px) {
+  .btn {
+    width: 100%;
+    
+  }
+  .d-flex {
+    display: -webkit-box!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+    flex-direction: column;
+}
+.pl-5, .px-5 {
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 3rem!important;
+}
+
+  .edit-form .button-container {
+    flex-direction: column; /* Change to vertical stacking for smaller screens */
+  }
+
+  .edit-form .btn {
+    padding: 6px; /* Further reduced padding */
+    font-size: 0.7rem; /* Even smaller font size */
+    width: 100%; /* Full width for each button */
+    margin: 5px 0; /* Vertical margin only */
+  }
+  .btn-primary {
+    margin-top: 5px;
+}
+}
+
 @media (max-width: 450px) {
   .edit-form .btn {
-    padding: 6px 10px; /* Further reduced padding */
+    padding: 6px 10px; /* Adjust padding */
   }
 }
 
-
-/* Specific styles for error states in the form */
-.partyName-error,
-.details-error {
-  border: 1px solid red;
-}
-
-.recicle-bin {
-  font-size: 20px; /* Adjusted font size for the recycle bin icon */
-  color: white;
-}
-
 .d-flex {
-
   justify-content: space-between;
- 
 }

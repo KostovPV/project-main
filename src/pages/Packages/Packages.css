@@ -46,3 +46,7 @@ a:not([href]):not([tabindex]) {
 .btn-indicator.rotate::after {
     transform: rotate(180deg);
 }
+
+.btn {
+    width: 60%;
+}

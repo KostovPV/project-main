@@ -33,3 +33,14 @@
   margin-top: auto;
   margin-left: 100px; /* Adjusted margin to move it right by 20px */
 }
+.learn-more {
+  margin-bottom: -104px;
+  margin-right: 10px;
+}
+.create-btn {
+  width: 39% !important;
+}
+.welcome-msg{
+  font-weight: 300;
+  color: #212529 !important;
+}
