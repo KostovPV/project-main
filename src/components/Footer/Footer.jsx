@@ -99,7 +99,7 @@ function Footer({ visitCount }) {
                       placeholder="Email"
                     />
                     <button type="submit" className="btn btn-primary">
-                      Send
+                      {`Send `}
                       <FontAwesomeIcon icon={faEnvelopeCircleCheck} />
                     </button>
                     {/* <input
