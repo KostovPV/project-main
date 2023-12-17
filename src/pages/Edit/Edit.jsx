@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faRotateLeft, faPen } from '@fortawesome/free-solid-svg-icons';
 
 
 import { db } from "../../firebase/config";
@@ -303,14 +303,16 @@ function Edit() {
                           type="submit"
                           className="btn btn-primary text-white py-3 px-5"
                         >
-                          Update
+                          {`Edit `}
+                          <FontAwesomeIcon icon={faPen} />
                         </button>
                         <button
                           type="submit"
                           className="btn btn-primary text-white py-3 px-5"
                           onClick={onExit}
                         >
-                          Return
+                          {`Return `}
+                          <FontAwesomeIcon icon={faRotateLeft} />
                         </button>
                         {canEdit && (
                           <button

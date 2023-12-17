@@ -3,6 +3,10 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useCollection } from "../../hooks/useCollection";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookOpenReader } from '@fortawesome/free-solid-svg-icons';
+
 import "./List.css"; // Import the CSS file for styling
 
 function List() {
@@ -53,7 +57,8 @@ function List() {
                     <p className="details">{party.details}</p>
                     <p>
                       <NavLink to={`/list/${party.id}`} className="btn btn-primary btn-custom-1 mt-4 learn-more">
-                        Learn More
+                        {`Learn More `}
+                        <FontAwesomeIcon icon={faBookOpenReader} />
                       </NavLink>
                     </p>
                   </div>

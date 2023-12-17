@@ -3,6 +3,9 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { useDocument } from "../../hooks/useDocument";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash, faRotateLeft, faPen } from '@fortawesome/free-solid-svg-icons';
+
 import "./Details.css";
 
 function Details() {
@@ -88,7 +91,8 @@ function Details() {
                 className="btn btn-primary text-white py-3 px-5 btn-centered-text"
                 onClick={onExit}
               >
-                Back to list
+               {`Back to list `}
+                <FontAwesomeIcon icon={faRotateLeft} />
               </button>
               {canEdit && (
                 <NavLink
@@ -97,7 +101,8 @@ function Details() {
                   className="btn btn-primary text-white py-3 px-5 btn-centered-text"
                   style={{ display: "block" }}
                 >
-                  Edit this
+                  {`Edit party `}
+                  <FontAwesomeIcon icon={faPen} />
                 </NavLink>
               )}
             </div>
