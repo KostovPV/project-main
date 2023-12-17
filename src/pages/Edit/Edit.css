@@ -1,8 +1,9 @@
 /* Edit.css */
 
 .edit-form .form-control {
-    margin-bottom: 10px;
-  }
+  margin-bottom: 10px;
+  width: 100%; /* Ensure full width */
+}
   
   .partyName-error,
   .details-error {
@@ -12,4 +13,59 @@
   .recicle-bin {
     font-size: 260px !important;
     color: white !important;
+}
+.edit-form .button-container {
+  display: flex;
+  flex-direction: row; /* Align buttons horizontally */
+  justify-content: space-between; /* Distribute buttons evenly */
+  align-items: center; /* Align buttons vertically */
+  width: 100%; /* Ensure button container is full width */
+  margin-top: 20px; /* Space above the button container */
+}
+
+.edit-form .btn {
+  padding: 10px 15px; /* Adjusted padding */
+  width: 48%; /* Adjust width to fit two buttons in one line */
+  text-align: center; /* Center text inside buttons */
+  max-width: none; /* Remove max-width restriction */
+}
+
+
+@media (max-width: 770px) {
+  .edit-form .button-container {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    align-items: stretch; /* Stretch buttons to fit container width */
+  }
+
+  .edit-form .btn {
+    width: 100%; /* Full width for each button */
+    margin: 5px 0; /* Vertical margin only */
+    padding: 6px 10px; /* Reduced padding */
+    font-size: 0.8rem; /* Smaller font size */
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 450px) {
+  .edit-form .btn {
+    padding: 6px 10px; /* Further reduced padding */
+  }
+}
+
+
+/* Specific styles for error states in the form */
+.partyName-error,
+.details-error {
+  border: 1px solid red;
+}
+
+.recicle-bin {
+  font-size: 20px; /* Adjusted font size for the recycle bin icon */
+  color: white;
+}
+
+.d-flex {
+
+  justify-content: space-between;
+ 
 }

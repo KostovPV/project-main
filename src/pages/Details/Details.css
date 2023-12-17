@@ -11,7 +11,9 @@
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
-  height: 520px;
+  width: 100%; /* Ensure full width */
+  max-width: 600px; /* Maximum width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .party-cardD-details h3 {
@@ -19,6 +21,7 @@
   margin-bottom: 10px;
   color: #0066cc;
   font-family: 'Dancing Script', cursive;
+  text-align: center; /* Center the text */
 }
 
 .party-cardD-details p.details {
@@ -40,16 +43,45 @@
 }
 
 .party-cardD-details .button-container {
+  width: 100%; /* Full width to contain buttons */
   display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  flex-direction: row; /* Align buttons in a row */
+  justify-content: center; /* Center the buttons horizontally */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
   margin-top: 20px;
 }
 
 .party-cardD-details .btn {
-  margin: 0 10px; /* Adjust as needed */
-  width: 240px;
-  height: 45px;
+  margin: 5px; /* Space around each button */
+  padding: 10px 15px; /* Adjusted padding */
+  flex-grow: 1; /* Allow buttons to grow and fill the space */
+  text-align: center; /* Center text inside buttons */
+}
+
+@media (max-width: 450px) {
+  .party-cardD-details .btn {
+    width: 100%; /* Full width for each button */
+    margin: 5px 0; /* Vertical margin only */
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 450px) {
+  .party-cardD-details h3,
+  .party-cardD-details p.details,
+  .party-cardD-details .created-by,
+  .party-cardD-details .category-label,
+  .party-cardD-details .date {
+    font-size: 1rem; /* Smaller font size */
+  }
+
+  .party-cardD-details .btn {
+    font-size: 0.9rem; /* Smaller button text */
+  }
+
+  .site-section {
+    padding: 2em 0; /* Adjust section padding */
+  }
 }
 
  .btn-primary .text-white .py-3 .px-5{
@@ -61,3 +93,4 @@
   padding-bottom: 14px; /* Adjust as needed */
   line-height: normal; /* Resets any inherited line height */
 }
+

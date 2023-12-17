@@ -23,6 +23,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import { useCollection } from "../../hooks/useCollection";
 
+import "./Edit.css";
+
 const categories = [
   { value: "birthday", label: "Birthday-party" },
   { value: "casual", label: "Games" },
@@ -308,7 +310,7 @@ function Edit() {
                           className="btn btn-primary text-white py-3 px-5"
                           onClick={onExit}
                         >
-                          Return to Party's list
+                          Return
                         </button>
                         {canEdit && (
                           <button
