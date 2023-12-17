@@ -14,7 +14,7 @@ The Kids Center is a React-based web application designed for parents who want t
 ### Accessibility
 - **Not Logged-In Users:** Access to Home, Find Us, Login, and Register pages.
 - **Logged-In Users:** Access to Parties, Create, About, Update Profile and Details pages.
-- **Party Authors:** Privileges to edit and delete their parties and update profile image.
+- **Party Authors:** Privileges to edit and delete their parties.
   
 ### Default user
 email: peter@abv.bg
