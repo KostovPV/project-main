@@ -28,7 +28,7 @@ function Details() {
     // Create a formatted date string
     formattedDate = `${day}.${month}.${year}`;
 
-    console.log(formattedDate); // Output: 20.11.2023
+    // console.log(formattedDate); 
   }
 
   const canEdit = document?.author === userId;

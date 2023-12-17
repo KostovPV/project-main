@@ -61,7 +61,7 @@ function Edit() {
       setCanEdit(document?.author === userId);
 
       const timestamp = document.date;
-      console.log("timestamp", timestamp);
+  
 
       const milliseconds = timestamp.seconds * 1000;
 
@@ -75,16 +75,16 @@ function Edit() {
       // Create a formatted date string
       let formattedDate = `${month}/${day}/${year}`;
 
-      console.log("formattedDate", formattedDate); // Output: 20.11.2023
+    
 
       setDate(new Date(formattedDate));
 
       setCategory(document.category);
     }
     if (parties) {
-      console.log("parties", parties);
+      
       const forbidenDates = parties.map((d) => d.date);
-      console.log(forbidenDates);
+     
 
       let formattedDates = forbidenDates.map((forbidenDate) => {
         const milliseconds = forbidenDate.seconds * 1000;
@@ -97,7 +97,7 @@ function Edit() {
         return `${month}/${day}/${year}`;
       });
       setExcludedDates(formattedDates);
-      console.log(formattedDates);
+      
     }
   }, [document, parties]);
 
@@ -137,15 +137,6 @@ function Edit() {
   }, [partyName, details, date]);
 
 
-
-
-
-
-  console.log(document);
-
-  console.log("category", category);
-  console.log("user", user);
-  console.log(" date", date);
   const newparty = {
     partyName,
     details,

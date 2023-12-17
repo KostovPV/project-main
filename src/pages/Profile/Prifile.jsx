@@ -9,7 +9,7 @@ import { storage } from "../../firebase/config";
 
 import { useNavigate } from "react-router-dom";
 
-import "./Profile.scss";
+import "./Profile.css";
 
 function Prifile() {
   const { user } = useAuthContext();

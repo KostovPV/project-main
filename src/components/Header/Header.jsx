@@ -7,7 +7,7 @@ import "./Header.css";
 function Header() {
   const { logout, isPending } = useLogout();
   const { user } = useAuthContext();
-  console.log(user);
+  // console.log(user);
 
   return (
     <>

@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
     login(email, password);
   };
-console.log(error);
+// console.log(error);
   return (
     <>
       {/* home page content start */}

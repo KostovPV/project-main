@@ -9,7 +9,7 @@ import { doc, updateDoc, getDoc, setDoc } from "firebase/firestore";
 // import all page
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
-import FindUs from "./pages/FindUs/FindUs";
+
 import Create from "./pages/Create/Creat";
 import Details from "./pages/Details/Details";
 import Edit from "./pages/Edit/Edit";
@@ -26,6 +26,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import AuthGuard from "./components/guards/authGuard";
 import PageNotFound from "./components/404/404";
+import FindUs from "./pages/FindUs/FIndUs";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -100,8 +101,7 @@ function App() {
     updateVisitCount();
   }, [user, authIsReady]);
   
-  
-  console.log(authIsReady);
+
 
   return (
     <>

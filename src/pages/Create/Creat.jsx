@@ -40,9 +40,9 @@ function Creat() {
 
   useEffect(() => {
     if (parties) {
-      console.log("parties", parties);
+      // console.log("parties", parties);
       const forbiddenDates = parties.map((d) => d.date);
-      console.log(forbiddenDates);
+      // console.log(forbiddenDates);
 
       let formattedDates = forbiddenDates.map((forbiddenDate) => {
         const milliseconds = forbiddenDate.seconds * 1000;
@@ -55,7 +55,7 @@ function Creat() {
         return `${month}/${day}/${year}`;
       });
       setExcludedDates(formattedDates);
-      console.log(formattedDates);
+      // console.log(formattedDates);
     }
   }, [parties]);
 
