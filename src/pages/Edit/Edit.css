@@ -2,11 +2,13 @@
 
 .btn {
   width: 28%;
-  
+
 }
+
 .edit-form .form-control {
   margin-bottom: 10px;
-  width: 100%; /* Ensure full width */
+  width: 100%;
+  /* Ensure full width */
 }
 
 .partyName-error,
@@ -15,13 +17,14 @@
 }
 
 .recicle-bin {
-  font-size: 20px; /* Adjusted font size for the recycle bin icon */
+  font-size: 20px;
+  /* Adjusted font size for the recycle bin icon */
   color: white;
 }
 
 .edit-form .button-container {
   display: flex;
-  flex-direction: row; /* Align buttons horizontally */
+  flex-direction: row; /* Align buttons horizontally by default */
   justify-content: space-between; /* Distribute buttons evenly */
   align-items: center; /* Align buttons vertically */
   width: 100%; /* Ensure button container is full width */
@@ -30,9 +33,8 @@
 
 .edit-form .btn {
   padding: 10px 15px; /* Adjusted padding */
-  width: 48%; /* Adjust width to fit two buttons in one line */
+  width: 48%; /* Adjust width to fit two buttons in one line by default */
   text-align: center; /* Center text inside buttons */
-  max-width: none; /* Remove max-width restriction */
 }
 
 @media (max-width: 770px) {
@@ -50,44 +52,30 @@
 }
 
 @media (max-width: 550px) {
-  .btn {
-    width: 100%;
-    
-  }
-  .d-flex {
-    display: -webkit-box!important;
-    display: -ms-flexbox!important;
-    display: flex!important;
-    flex-direction: column;
-}
-.pl-5, .px-5 {
-  margin-bottom: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
-  padding-left: 3rem!important;
-}
-
   .edit-form .button-container {
-    flex-direction: column; /* Change to vertical stacking for smaller screens */
+    flex-direction: column; /* Ensure buttons are stacked vertically */
   }
 
   .edit-form .btn {
-    padding: 6px; /* Further reduced padding */
-    font-size: 0.7rem; /* Even smaller font size */
     width: 100%; /* Full width for each button */
-    margin: 5px 0; /* Vertical margin only */
+    margin: 5px 0; /* Space between buttons */
+    padding: 6px 10px; /* Consistent padding */
   }
-  .btn-primary {
-    margin-top: 5px;
-}
 }
 
 @media (max-width: 450px) {
   .edit-form .btn {
-    padding: 6px 10px; /* Adjust padding */
+    padding: 6px 10px; /* Slightly adjust padding if needed */
   }
+  .pl-5, .px-5 {
+    padding-left: 0rem!important;
+}
+.pr-5, .px-5 {
+    padding-right: 0rem!important;
+}
 }
 
-.d-flex {
+
+/* .d-flex {
   justify-content: space-between;
-}
+} */

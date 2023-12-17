@@ -298,7 +298,7 @@ function Edit() {
                       </div>
                     </div>
                     <div className="form-group row">
-                      <div className="col-12 d-flex" style={{ columnGap: 10 }}>
+                      <div className="col-12 d-flex flex-btn-items" style={{ columnGap: 10 }}>
                         <button
                           type="submit"
                           className="btn btn-primary text-white py-3 px-5"
