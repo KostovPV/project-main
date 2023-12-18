@@ -11,9 +11,9 @@
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
-  width: 100%; /* Ensure full width */
-  max-width: 600px; /* Maximum width */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%; 
+  max-width: 600px; 
+  box-sizing: border-box; 
 }
 
 .party-cardD-details h3 {
@@ -21,7 +21,7 @@
   margin-bottom: 10px;
   color: #0066cc;
   font-family: 'Dancing Script', cursive;
-  text-align: center; /* Center the text */
+  text-align: center; 
 }
 
 .party-cardD-details p.details {
@@ -32,7 +32,7 @@
   margin-bottom: 20px;
 }
 
-/* Apply similar styles for created by, category, and date */
+
 .party-cardD-details .created-by,
 .party-cardD-details .category-label,
 .party-cardD-details .date {
@@ -43,44 +43,44 @@
 }
 
 .party-cardD-details .button-container {
-  width: 100%; /* Full width to contain buttons */
+  width: 100%; 
   display: flex;
-  flex-direction: row; /* Align buttons in a row */
-  justify-content: center; /* Center the buttons horizontally */
-  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  flex-direction: row;
+  justify-content: center; 
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
 .party-cardD-details .btn {
-  margin: 5px; /* Space around each button */
-  padding: 10px 15px; /* Adjusted padding */
-  flex-grow: 1; /* Allow buttons to grow and fill the space */
-  text-align: center; /* Center text inside buttons */
+  margin: 5px; 
+  padding: 10px 15px; 
+  flex-grow: 1; 
+  text-align: center; 
 }
 
 @media (max-width: 450px) {
   .party-cardD-details .btn {
-    width: 100%; /* Full width for each button */
-    margin: 5px 0; /* Vertical margin only */
+    width: 100%; 
+    margin: 5px 0; 
   }
 }
 
-/* Responsive adjustments for smaller screens */
+
 @media (max-width: 450px) {
   .party-cardD-details h3,
   .party-cardD-details p.details,
   .party-cardD-details .created-by,
   .party-cardD-details .category-label,
   .party-cardD-details .date {
-    font-size: 1rem; /* Smaller font size */
+    font-size: 1rem;
   }
 
   .party-cardD-details .btn {
-    font-size: 0.9rem; /* Smaller button text */
+    font-size: 0.9rem; 
   }
 
   .site-section {
-    padding: 2em 0; /* Adjust section padding */
+    padding: 2em 0; 
   }
 }
 
@@ -89,8 +89,8 @@
 }
 
 .btn-centered-text {
-  padding-top: 10px; /* Adjust as needed */
-  padding-bottom: 14px; /* Adjust as needed */
-  line-height: normal; /* Resets any inherited line height */
+  padding-top: 10px; 
+  padding-bottom: 14px; 
+  line-height: normal; 
 }
 

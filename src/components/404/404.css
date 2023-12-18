@@ -6,7 +6,6 @@
   body {
     padding: 0;
     margin: 0;
-    /* background-color: cadetblue; */
   }
   
   #notfound {
@@ -27,7 +26,6 @@
     max-width: 410px;
     width: 100%;
     text-align: center;
-    /* background-color: cadetblue; */
   }
   .no-content-container{
     width: 100%;
@@ -49,10 +47,11 @@
     position: absolute;
     left: 50%;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
     background: url('../../../public/images/bg.jpg') no-repeat;
     -webkit-background-clip: text;
+    background-clip: text; 
     -webkit-text-fill-color: transparent;
     background-size: cover;
     background-position: center;

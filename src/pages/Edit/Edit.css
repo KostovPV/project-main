@@ -8,7 +8,6 @@
 .edit-form .form-control {
   margin-bottom: 10px;
   width: 100%;
-  /* Ensure full width */
 }
 
 .partyName-error,
@@ -18,54 +17,51 @@
 
 .recicle-bin {
   font-size: 20px;
-  /* Adjusted font size for the recycle bin icon */
   color: white;
 }
 
 .edit-form .button-container {
   display: flex;
-  flex-direction: row; /* Align buttons horizontally by default */
-  justify-content: space-between; /* Distribute buttons evenly */
-  align-items: center; /* Align buttons vertically */
-  width: 100%; /* Ensure button container is full width */
-  margin-top: 20px; /* Space above the button container */
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-top: 20px; 
 }
 
 .edit-form .btn {
-  padding: 10px 15px; /* Adjusted padding */
-  width: 48%; /* Adjust width to fit two buttons in one line by default */
-  text-align: center; /* Center text inside buttons */
+  padding: 10px 15px; 
+  width: 48%; 
+  text-align: center; 
 }
 
 @media (max-width: 770px) {
   .edit-form .button-container {
-    flex-direction: column; /* Stack buttons vertically on smaller screens */
-    align-items: stretch; /* Stretch buttons to fit container width */
+    flex-direction: column; 
+    align-items: stretch; 
   }
 
   .edit-form .btn {
-    width: 100%; /* Full width for each button */
-    margin: 5px 0; /* Vertical margin only */
-    padding: 6px 10px; /* Reduced padding */
-    font-size: 0.8rem; /* Smaller font size */
+    width: 100%; 
+    margin: 5px 0; 
+    font-size: 0.8rem; 
   }
 }
 
 @media (max-width: 550px) {
   .edit-form .button-container {
-    flex-direction: column; /* Ensure buttons are stacked vertically */
+    flex-direction: column; 
   }
 
   .edit-form .btn {
-    width: 100%; /* Full width for each button */
-    margin: 5px 0; /* Space between buttons */
-    padding: 6px 10px; /* Consistent padding */
+    width: 100%; 
+    margin: 5px 0; 
+    padding: 6px 10px;
   }
 }
 
 @media (max-width: 450px) {
   .edit-form .btn {
-    padding: 6px 10px; /* Slightly adjust padding if needed */
+    padding: 6px 10px; 
   }
   .pl-5, .px-5 {
     padding-left: 0rem!important;
@@ -76,6 +72,3 @@
 }
 
 
-/* .d-flex {
-  justify-content: space-between;
-} */

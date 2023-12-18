@@ -23,10 +23,7 @@
 .text-cursive {
     margin-top: 195px;
 }
-/* .btn b.tn-primary .btn-custom-1 .mt-4 .package-style{
-  
-    color: antiquewhite;
-} */
+
 a:not([href]):not([tabindex]) {
     color: antiquewhite;
     text-decoration: none;
