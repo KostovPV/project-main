@@ -54,7 +54,7 @@ function List() {
                     <p className="details">{party.details}</p>
                     <p>
                       <NavLink to={`/list/${party.id}`} className="btn btn-primary btn-custom-1 mt-4 learn-more">
-                        {`Learn More `}
+                        {`Details `}
                         <FontAwesomeIcon icon={faBookOpenReader} />
                       </NavLink>
                     </p>
@@ -80,7 +80,7 @@ function List() {
           </div>
           <p>
             <NavLink to={`/create`} className="btn btn-primary btn-custom-1 mt-4 create-btn">
-              Create your own party
+              Create party
             </NavLink>
           </p>
         </div>

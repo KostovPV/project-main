@@ -49,8 +49,8 @@ function About() {
               <div>
                 <div>
                   <span>
-                    The Kid's center core idea is to create a pleasant atmosphere
-                    which will help the children to have a quality time together.
+                  {`The Kid's center core idea is to create a pleasant atmosphere
+                    which will help the children to have a quality time together. `}
                   </span>
                   <span>
                     We will provide the best service for your kid's party.
@@ -58,19 +58,19 @@ function About() {
                 </div>
                 {showMore && (
                   <div className="mt-5">
-                  <p>
-                    Since April 2023, we have been trying to create the best
-                    memories for you and your children. The kids' smiles and
-                    happy look are what we aim at. You can find us at Izgrev bl
-                    4, or simply follow the link:{"  "}
-                    <NavLink to="/findus" className="link-style">Find us</NavLink>
-                  </p>
-                </div>
+                    <p>
+                    {`Since April 2023, we have been trying to create the best
+                      memories for you and your children. The kids' smiles and
+                      happy look are what we aim at. You can find us at Izgrev bl
+                      4, or simply follow the link:  `}
+                      <NavLink to="/findus" className="link-style">Find us</NavLink>
+                    </p>
+                  </div>
                 )}
                 <div className="mt-5">
                   <a
                     onClick={toggleShowMore}
-                    className="btn btn-primary btn-custom-1 mt-4"
+                    className={`btn btn-primary btn-custom-1 mt-4 btn-indicator ${showMore ? 'rotate' : ''}`}
                   >
                     {showMore ? "Show less" : "More About Us"}
                   </a>
@@ -79,9 +79,9 @@ function About() {
             </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+        </div>
+      </>
+      );
 }
 
-export default About;
+      export default About;

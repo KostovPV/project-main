@@ -13,6 +13,9 @@ import addDays from "date-fns/addDays";
 import "react-datepicker/dist/react-datepicker.css";
 import { useCollection } from "../../hooks/useCollection";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faRotateLeft } from '@fortawesome/free-solid-svg-icons';
+
 const categories = [
   { value: "birthday", label: "Birthday-party" },
   { value: "casual", label: "Games" },
@@ -248,14 +251,16 @@ function Creat() {
                           type="submit"
                           className="btn btn-primary text-white py-3 px-5"
                         >
-                          Add
+                          {`Add `}
+                          <FontAwesomeIcon icon={faPlus} />
                         </button>
                         <button
                           type="submit"
                           className="btn btn-primary text-white py-3 px-5"
                           onClick={onExit}
                         >
-                          Return to Party's list
+                          {`Return to list `}
+                          <FontAwesomeIcon icon={faRotateLeft} />
                         </button>
                       </div>
                     </div>

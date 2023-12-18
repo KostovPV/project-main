@@ -16,3 +16,8 @@
   .link-style:hover {
     color: #0056b3; /* Darker blue on hover */
   }
+  
+.link-style.rotate {
+    transform: rotate(180deg); 
+    transition: transform 0.3s ease; 
+  }
