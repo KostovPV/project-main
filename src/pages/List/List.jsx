@@ -7,13 +7,10 @@ import { useCollection } from "../../hooks/useCollection";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpenReader } from '@fortawesome/free-solid-svg-icons';
 
-import "./List.css"; // Import the CSS file for styling
-
+import "./List.css"; 
 function List() {
   const { documents: parties } = useCollection("parties");
-  const navigate = useNavigate();
-// const parties =[];
-  // Check if parties is not null and has length greater than 0
+
   const hasParties = parties && parties.length > 0;
 
   return (

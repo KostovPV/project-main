@@ -12,10 +12,9 @@ function Login() {
     e.preventDefault();
     login(email, password);
   };
-// console.log(error);
+
   return (
     <>
-      {/* home page content start */}
       <div className="ftco-blocks-cover-1">
         <div
           className="site-section-cover overlay"

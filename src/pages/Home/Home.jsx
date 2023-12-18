@@ -3,7 +3,6 @@ import "./Home.css";
 function Home() {
   return (
     <>
-      {/* home page content start */}
       <div className="ftco-blocks-cover-1">
         <div className="site-section-cover overlay" id="homeBanner">
           <div className="home-container">
@@ -29,7 +28,6 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* bottom cotent */}
       <div className="site-section">
         <div className="container">
           <div className="row">

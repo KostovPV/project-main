@@ -72,7 +72,6 @@ function Signup() {
                             Sign up
                           </button>
                         </form>
-                        {/* Display errors for specific fields */}
                         {errors.password && <div className="error">{errors.password}</div>}
 
                         {error && (
@@ -82,10 +81,7 @@ function Signup() {
                               : `Error: ${error.message}`}
                           </div>
                         )}
-                        {/* Log the error object to the console for debugging */}
-                        {console.log("Error object:", error)}
-
-                        {/* Display generic error */}
+                        {console.log("Error object:", error)}                      
                         {error && <div className="error">{error}</div>}
                       </div>
                     </div>

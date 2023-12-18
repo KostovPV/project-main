@@ -7,9 +7,7 @@ import { faTrash, faRotateLeft, faPen } from '@fortawesome/free-solid-svg-icons'
 
 import { db } from "../../firebase/config";
 import {
-  collection,
   doc,
-  setDoc,
   updateDoc,
   deleteDoc,
 } from "firebase/firestore";
@@ -51,7 +49,6 @@ function Edit() {
   const [dateError, setDateError] = useState(null);
 
   const [detailsError, setDetailsError] = useState(null);
-  // const { allDocs } = useCollection('parties')
   const [excludedDates, setExcludedDates] = useState("");
   const [formError, setFormError] = useState(null);
 
@@ -63,21 +60,14 @@ function Edit() {
       setCanEdit(document?.author === userId);
 
       const timestamp = document.date;
-  
-
       const milliseconds = timestamp.seconds * 1000;
 
       const dateT = new Date(milliseconds);
-
-      // Extract day, month, and year
       const day = dateT.getDate();
-      const month = dateT.getMonth() + 1; // Month is zero-indexed, so add 1
+      const month = dateT.getMonth() + 1; 
       const year = dateT.getFullYear();
 
-      // Create a formatted date string
       let formattedDate = `${month}/${day}/${year}`;
-
-    
 
       setDate(new Date(formattedDate));
 
@@ -151,7 +141,7 @@ function Edit() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check for any validation errors before proceeding
+    
     if (partyNameError || detailsError || dateError) {
       setFormError("Please fix the validation errors before submitting.");
       return;
@@ -270,7 +260,7 @@ function Edit() {
                             selected={date}
                             onChange={(date) => {
                               setDate(date);
-                              setDateError(null); // Clear the error on change
+                              setDateError(null); 
                             }}
                           />
                           {dateError && (

@@ -39,11 +39,9 @@ function Creat() {
   const [dateError, setDateError] = useState(null);
 
   useEffect(() => {
-    if (parties) {
-      // console.log("parties", parties);
+    if (parties) {  
       const forbiddenDates = parties.map((d) => d.date);
-      // console.log(forbiddenDates);
-
+   
       let formattedDates = forbiddenDates.map((forbiddenDate) => {
         const milliseconds = forbiddenDate.seconds * 1000;
         const dateS = new Date(milliseconds);
@@ -55,7 +53,7 @@ function Creat() {
         return `${month}/${day}/${year}`;
       });
       setExcludedDates(formattedDates);
-      // console.log(formattedDates);
+      
     }
   }, [parties]);
 
@@ -96,7 +94,7 @@ function Creat() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Check for any validation errors before proceeding
+    
     if (titleError || detailsError || dateError) {
       setFormError("Please fix the validation errors before submitting.");
       return;
@@ -126,7 +124,6 @@ function Creat() {
 
   const onExit = (e) => {
     e.preventDefault();
-    // Set the default toast options for the current page
     toast.success('Changes not saved!', {
       position: 'top-right',
     });
@@ -151,12 +148,6 @@ function Creat() {
                 <h1 className="mb-3 font-weight-bold text-teal">
                   Create your party
                 </h1>
-                {/* <p>
-                  <NavLink to="/" className="text-white">
-                    Home
-                  </NavLink>
-                  <span className="mx-3">/</span> <strong>Create party</strong>
-                </p> */}
               </div>
             </div>
           </div>
@@ -172,7 +163,7 @@ function Creat() {
           <div className="row">
             <div className="col-lg-8 mx-auto mb-5">
               <Toaster
-                // position="top-right"
+               
                 reverseOrder={false}
               />
               {excludedDates && (
@@ -229,7 +220,7 @@ function Creat() {
                             selected={date}
                             onChange={(date) => {
                               setDate(date);
-                              setDateError(null); // Clear the error on change
+                              setDateError(null); 
                             }}
                           />
                           {dateError && (

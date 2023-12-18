@@ -9,13 +9,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelopeCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 
-
-// Google account credentials used to send email
-
-
 const emailCollection = collection(db, 'mail');
 
-// Cloud Function to send email
 
 
 function Footer({ visitCount }) {
@@ -28,7 +23,6 @@ function Footer({ visitCount }) {
   };
 
   const isValidEmail = (email) => {
-    // Regular expression for basic email validation
     const emaliRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return emaliRegex.test(String(email).toLowerCase());
   };
@@ -37,11 +31,11 @@ function Footer({ visitCount }) {
     e.preventDefault();
 
     if (!isValidEmail(inputEmail)) {
-      // Display a toast message for invalid email
+      
       toast.error('Invalid email', {
         position: 'bottom-right',
       });
-      return; // Exit the function if the email is not valid
+      return; 
     }
 
     try {
@@ -49,13 +43,13 @@ function Footer({ visitCount }) {
       document.getElementById('emailInput').value = '';
       setInputEmail('');
 
-      // Display a success message
+    
       toast.success('Successfully subscribed!', {
         position: 'bottom-right',
       });
     } catch (error) {
       console.error('Error adding document:', error);
-      // Optionally, display an error toast message
+    e
       toast.error('Error subscribing. Please try again later.', {
         position: 'bottom-right',
       });
@@ -102,11 +96,6 @@ function Footer({ visitCount }) {
                       {`Send `}
                       <FontAwesomeIcon icon={faEnvelopeCircleCheck} />
                     </button>
-                    {/* <input
-                      type="submit"
-                      defaultValue="Send"
-                      className="btn btn-primary"
-                    /> */}
                   </form>
                 </div>
               </div>

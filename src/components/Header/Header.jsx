@@ -7,11 +7,11 @@ import "./Header.css";
 function Header() {
   const { logout, isPending } = useLogout();
   const { user } = useAuthContext();
-  // console.log(user);
+  
 
   return (
     <>
-      {/* mobile menu */}
+    
       <div className="site-mobile-menu site-navbar-target">
         <div className="site-mobile-menu-header">
           <div className="site-mobile-menu-close mt-3">
@@ -71,7 +71,6 @@ function Header() {
           </ul>
         </div>
       </div>
-      {/* header code start */}
       <header className="site-navbar site-navbar-target" role="banner">
         <div className="container mb-3">
           <div className="d-flex align-items-center">

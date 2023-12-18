@@ -4,7 +4,7 @@ import { useDocument } from "../../hooks/useDocument";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faRotateLeft, faPen } from '@fortawesome/free-solid-svg-icons';
+import {  faRotateLeft, faPen } from '@fortawesome/free-solid-svg-icons';
 
 import "./Details.css";
 
@@ -23,15 +23,13 @@ function Details() {
 
     const date = new Date(milliseconds);
 
-    // Extract day, month, and year
+   
     const day = date.getDate();
-    const month = date.getMonth() + 1; // Month is zero-indexed, so add 1
+    const month = date.getMonth() + 1; 
     const year = date.getFullYear();
 
-    // Create a formatted date string
     formattedDate = `${day}.${month}.${year}`;
 
-    // console.log(formattedDate); 
   }
 
   const canEdit = document?.author === userId;
