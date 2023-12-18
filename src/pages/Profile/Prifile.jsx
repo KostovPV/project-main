@@ -7,6 +7,7 @@ import { updateProfile } from "firebase/auth";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../../firebase/config";
 
+import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 import "./Profile.css";
@@ -27,6 +28,14 @@ function Prifile() {
       setPhoto(e.target.files[0]);
     }
   }
+
+  const onExit = (e) => {
+    e.preventDefault();
+    toast.success('Upload was cancelled', {
+      position: 'top-right',
+    });
+    navigate("/");
+  };
 
   async function updateUserProfile(file, user, setLoading) {
     const fileRef = ref(storage, user.uid + ".png");
@@ -73,13 +82,13 @@ function Prifile() {
                 <h1 className="mb-3 font-weight-bold text-teal">
                   Update user profile
                 </h1>
-                <p>
+                {/* <p>
                   <NavLink to="/" className="text-white">
                     Home
                   </NavLink>
                   <span className="mx-3">/</span>{" "}
                   <strong>Update profile</strong>
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -115,11 +124,18 @@ function Prifile() {
                 <p>{photo != null ? photo.name : null}</p>
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="btn btn-primary update-btn"
                   disabled={loading || !photo}
                   onClick={handleClick}
                 >
                   Upload
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-primary update-btn"
+                  onClick={onExit}
+                >
+                  Cancel
                 </button>
               </div>
             </div>
